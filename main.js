@@ -1,7 +1,7 @@
-import * as THREE from 'three';
-import * as THREEX from 'threex';
-import * as ARjs from 'arjs';
-import { ArToolkitSource, ArToolkitContext, ArMarkerControls }  from 'threex'
+import * as THREE from '/node_modules/three/build/three.module.js';
+//import * as THREEX from '/node_modules/@ar-js-org/ar.js/three.js/build/ar-threex.mjs';
+//import * as ARjs from 'arjs';
+import { ArToolkitSource, ArToolkitContext, ArMarkerControls }  from '/node_modules/@ar-js-org/ar.js/three.js/build/ar-threex.mjs';
 
 ArToolkitContext.baseURL = '../'
 
