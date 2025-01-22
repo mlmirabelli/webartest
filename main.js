@@ -1,5 +1,5 @@
-import * as THREE from '/srcs/three/build/three.module.js';
-import { ArToolkitSource, ArToolkitContext, ArMarkerControls }  from '/srcs/@ar-js-org/ar.js/three.js/build/ar-threex.mjs';
+import * as THREE from 'https://mlmirabelli.github.io/webartest/srcs/three/build/three.module.js';
+import { ArToolkitSource, ArToolkitContext, ArMarkerControls }  from 'https://mlmirabelli.github.io/webartest/srcs/@ar-js-org/ar.js/three.js/build/ar-threex.mjs';
 
 ArToolkitContext.baseURL = '../'
 
