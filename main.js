@@ -82,7 +82,7 @@ function initARContext() { // create atToolkitContext
 	// MARKER
 	arMarkerControls = new ArMarkerControls(arToolkitContext, camera, {
 		type: 'pattern',
-		patternUrl: './media/pattern-kanji.patt',
+		patternUrl: './media/viewer-pattern.patt',
 		//patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji',
 		// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'
 		changeMatrixMode: 'cameraTransformMatrix'
