@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import * as THREE from 'three';
 import * as THREEX from 'threex';
 import * as ARjs from 'arjs';
@@ -415,6 +414,4 @@ function animate() {
 	cube.rotation.y += 0.01;
 
 	renderer.render( scene, camera );
-
->>>>>>> 78e344a (Add existing project files to Git)
 }*/
