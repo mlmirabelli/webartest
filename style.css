@@ -1,0 +1,128 @@
+<<<<<<< HEAD
+body {
+  margin: 0;
+}
+
+#objs3D{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.roundButton{
+  position: absolute;
+  z-index: 2;
+  width: 80px;
+  height: 80px;
+  padding: 20px;
+}
+
+#flipCamera{
+  width: 100%;
+  height: 100%;
+  background-image: url(media/flipCamera.png);
+  background-size: 100% 100%;
+  border-radius: 50%;
+  border: none;
+}
+
+#flipCamera:disabled{
+  filter: grayscale(80%);
+}
+
+
+#flipCamera:hover:enabled{
+  filter: brightness(150%)
+}
+
+#flipCamera:active:enabled{
+  transform: translateY(2px);
+}
+
+/*Source for video sizing and placement: https://codepen.io/shshaw/pen/OVGWLG */
+#streamContainer {
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#streamContainer video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  object-fit: cover;
+=======
+body {
+  margin: 0;
+}
+
+#objs3D{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.roundButton{
+  position: absolute;
+  z-index: 2;
+  width: 80px;
+  height: 80px;
+  padding: 20px;
+}
+
+#flipCamera{
+  width: 100%;
+  height: 100%;
+  background-image: url(media/flipCamera.png);
+  background-size: 100% 100%;
+  border-radius: 50%;
+  border: none;
+}
+
+#flipCamera:disabled{
+  filter: grayscale(80%);
+}
+
+
+#flipCamera:hover:enabled{
+  filter: brightness(150%)
+}
+
+#flipCamera:active:enabled{
+  transform: translateY(2px);
+}
+
+/*Source for video sizing and placement: https://codepen.io/shshaw/pen/OVGWLG */
+#streamContainer {
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#streamContainer video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  object-fit: cover;
+>>>>>>> 78e344a (Add existing project files to Git)
+}
