@@ -63,7 +63,7 @@ function onResize() {
 
 function initARContext() { // create atToolkitContext
 	arToolkitContext = new ArToolkitContext({
-		cameraParametersUrl: './media/camera_para.dat',
+		cameraParametersUrl: 'https://mlmirabelli.github.io/webartest/media/camera_para.dat',
 		detectionMode: 'mono'
 	})
 	// initialize it
@@ -80,7 +80,7 @@ function initARContext() { // create atToolkitContext
 	// MARKER
 	arMarkerControls = new ArMarkerControls(arToolkitContext, camera, {
 		type: 'pattern',
-		patternUrl: './media/viewer-pattern.patt',
+		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-kanji.patt',
 		//patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji',
 		// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'
 		changeMatrixMode: 'cameraTransformMatrix'
