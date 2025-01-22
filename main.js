@@ -1,7 +1,5 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.172.0/build/three.module.js';
-//import * as THREEX from '/node_modules/@ar-js-org/ar.js/three.js/build/ar-threex.mjs';
-//import * as ARjs from 'arjs';
-import { ArToolkitSource, ArToolkitContext, ArMarkerControls }  from 'https://www.npmjs.com/package/ar.js/v/2.1.4/three.js/build/ar-threex.mjs';
+import * as THREE from 'three';
+import { ArToolkitSource, ArToolkitContext, ArMarkerControls }  from 'threex';
 
 ArToolkitContext.baseURL = '../'
 
