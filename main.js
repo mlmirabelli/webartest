@@ -18,7 +18,6 @@ document.getElementById("continueButton").onclick = hideUI;
 
 function hideUI()
 {
-	console.log('HOLA');
 	document.getElementById("uiContainer").style.display = "none";
 }
 
@@ -88,7 +87,7 @@ function initARContext() { // create atToolkitContext
 	// MARKER
 	arMarkerControls = new ArMarkerControls(arToolkitContext, camera, {
 		type: 'pattern',
-		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-kanji.patt',
+		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-viewerIcon1.patt',
 		//patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji',
 		// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'
 		changeMatrixMode: 'cameraTransformMatrix'
