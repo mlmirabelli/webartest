@@ -14,6 +14,14 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.getElementById("objs3D").appendChild( renderer.domElement );
 
+document.getElementById("continueButton").onclick = hideUI;
+
+function hideUI()
+{
+	console.log('HOLA');
+	document.getElementById("uiContainer").style.display = "none";
+}
+
 var onRenderFcts = [];
 var arToolkitContext, arMarkerControls;
 initARContext();
@@ -73,7 +81,7 @@ function initARContext() { // create atToolkitContext
 		arToolkitContext.arController.orientation = getSourceOrientation();
 		arToolkitContext.arController.options.orientation = getSourceOrientation();
 
-		console.log('arToolkitContext', arToolkitContext);
+		console.log('arToolkitContext bleh blip bloop', arToolkitContext);
 		window.arToolkitContext = arToolkitContext;
 	})
 
