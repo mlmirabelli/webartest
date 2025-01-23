@@ -3,20 +3,30 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Three.js Test</title>
-	<link rel="stylesheet" type="text/css" href="https://mlmirabelli.github.io/webartest/style.css" />
+
+	<title>Web Augmented Reality Test</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans">
+	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
-	<div id="streamContainer">
+	<!--<div id="streamContainer">
 	<video autoplay muted playsinline></video>
-	</div>
-	
-	<!--<div class="roundButton">
-	<button type="button" id="flipCamera"></button>
-	</div>--> 
-	
-	<div id="objs3D"></div>   
-    
+	</div>-->
+
+	<div id="objs3D"></div>
+
+	<div id="uiContainer">
+		<div class="uiText">
+			<h2 id="uiTitle">Gensler Tower Viewers</h2>	
+			<p class="uiDescription">An AR experience to uncover the incredible landmarks that can be viewed from Gensler's CR office</p>
+		</div>
+		<div class="roundButton">
+			<button type="button" id="continue"></button>
+		</div>
+	</div>  
 </body>
 
 <script type="importmap">

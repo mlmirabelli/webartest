@@ -1,5 +1,9 @@
 body {
   margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #objs3D{
@@ -9,35 +13,77 @@ body {
   height: 100%;
 }
 
-/*.roundButton{
+#uiContainer{
   position: absolute;
   z-index: 2;
-  width: 80px;
-  height: 80px;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+  font-family: 'Instrument Sans'
 }
 
-#flipCamera{
+.uiText{
+  color: white;
+  text-align: center;
+  margin: 30px 30px 0px;
+}
+
+.uiDescription{
+  text-wrap: balance;
+}
+
+#uiTitle{
+  font-weight: bold;
+}
+
+@media(orientation: landscape){
+  #uiContainer{
+    width: 40%;
+    height: 40%;
+    top: 30%;
+  }
+}
+
+@media(orientation: portrait){
+  #uiContainer{
+    width: 30%;
+    height: 60%;
+    top: 20%;
+  }
+}
+
+.roundButton{
+  z-index: 3;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+}
+
+#continue{
   width: 100%;
   height: 100%;
-  background-image: url(media/flipCamera.png);
+  background-image: url(https://mlmirabelli.github.io/webartest/media/continue.png);
   background-size: 100% 100%;
   border-radius: 50%;
   border: none;
 }
 
-#flipCamera:disabled{
+#continue:disabled{
   filter: grayscale(80%);
 }
 
 
-#flipCamera:hover:enabled{
+#continue:hover:enabled{
   filter: brightness(150%)
 }
 
-#flipCamera:active:enabled{
+#continue:active:enabled{
   transform: translateY(2px);
-}*/
+}
 
 /*Source for video sizing and placement: https://codepen.io/shshaw/pen/OVGWLG */
 #streamContainer {
