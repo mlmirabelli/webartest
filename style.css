@@ -36,14 +36,14 @@ body {
   color: white;
 }
 
-@media (orientation: landscape)
+@media screen and (orientation: landscape)
 {
   .uiText{
     font-size: 2vw;
   }
 }
 
-@media (orientation: portrait)
+@media screen and (orientation: portrait)
 {
   .uiText{
     font-size: 2vh;
