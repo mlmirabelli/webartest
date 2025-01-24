@@ -87,7 +87,7 @@ function initARContext() { // create atToolkitContext
 	// MARKER
 	arMarkerControls = new ArMarkerControls(arToolkitContext, camera, {
 		type: 'pattern',
-		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-marker.patt',
+		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-binoculars.patt',
 		//patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji',
 		// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'
 		changeMatrixMode: 'cameraTransformMatrix'
