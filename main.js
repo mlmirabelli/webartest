@@ -150,7 +150,6 @@ fbxLoader.load(
 				child.material.needsUpdate = true;
 			}
 		});
-		object.material = new THREE.MeshBasicMaterial( { map: fbxTexture1 } );
 		object.scale.set(0.005, 0.005, 0.005); 
         scene.add(object)
     },
