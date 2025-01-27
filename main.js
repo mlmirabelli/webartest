@@ -137,7 +137,7 @@ onRenderFcts.push(function () {
 //////////////////////////////////////////////////////////////////////////////////
 const fbxLoader = new FBXLoader()
 fbxLoader.load(
-    'https://mlmirabelli.github.io/webartest/media/3DPointer.fbx',
+    'https://mlmirabelli.github.io/webartest/media/propsheart.fbx',
     (object) => {
 		/*object.traverse(function (child) {
 			if (child.isMesh) {
