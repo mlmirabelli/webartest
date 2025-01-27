@@ -140,7 +140,7 @@ const fbxTexture1 = loader.load('https://mlmirabelli.github.io/webartest/media/t
 
 const fbxLoader = new FBXLoader()
 fbxLoader.load(
-    'https://mlmirabelli.github.io/webartest/media/propsheart.fbx',
+    'https://mlmirabelli.github.io/webartest/media/3DPointer.fbx',
     (object) => {
 		object.traverse(function (child) {
 			if (child instanceof THREE.Mesh) {
@@ -150,7 +150,7 @@ fbxLoader.load(
 				child.material.needsUpdate = true;
 			}
 		});
-		object.scale.set(0.005, 0.005, 0.005); 
+		object.scale.set(0.002, 0.002, 0.002); 
         scene.add(object)
     },
     (xhr) => {
