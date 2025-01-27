@@ -139,12 +139,12 @@ const fbxLoader = new FBXLoader()
 fbxLoader.load(
     'https://mlmirabelli.github.io/webartest/media/3DPointer.fbx',
     (object) => {
-		object.traverse(function (child) {
+		/*object.traverse(function (child) {
 			if (child.isMesh) {
 			  child.material.map = null;
 			}
-		  });
-		  //object.scale.set(100, 100, 100); 
+		  });*/
+		  object.scale.set(10, 10, 10); 
         scene.add(object)
     },
     (xhr) => {
