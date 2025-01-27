@@ -135,6 +135,9 @@ onRenderFcts.push(function () {
 //////////////////////////////////////////////////////////////////////////////////
 //		add an object in the scene
 //////////////////////////////////////////////////////////////////////////////////
+const loader = new THREE.TextureLoader();
+const fbxTexture1 = loader.load('https://mlmirabelli.github.io/webartest/media/texture1.png');
+
 const fbxLoader = new FBXLoader()
 fbxLoader.load(
     'https://mlmirabelli.github.io/webartest/media/propsheart.fbx',
@@ -144,6 +147,7 @@ fbxLoader.load(
 			  child.material.map = null;
 			}
 		  });*/
+		  object.material = new THREE.MeshBasicMaterial( { map: fbxTexture1 } );
 		  object.scale.set(0.005, 0.005, 0.005); 
         scene.add(object)
     },
