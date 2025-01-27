@@ -135,8 +135,6 @@ onRenderFcts.push(function () {
 //////////////////////////////////////////////////////////////////////////////////
 //		add an object in the scene
 //////////////////////////////////////////////////////////////////////////////////
-const loader = new THREE.TextureLoader();
-const fbxTexture1 = loader.load('https://mlmirabelli.github.io/webartest/media/texture1.png');
 
 const fbxLoader = new FBXLoader()
 fbxLoader.load(
@@ -145,12 +143,10 @@ fbxLoader.load(
 		object.traverse(function (child) {
 			if (child instanceof THREE.Mesh) {
 				console.log("found a mesh");
-				// apply texture
-				//child.material.map = fbxTexture1
-				//child.material.needsUpdate = true;
+				child.material = new THREE.MeshNormalMaterial();
+				child.material.needsUpdate = true;
 			}
 		});
-		//object.mesh.material = new THREE.MeshNormalMaterial();
 		object.scale.set(0.005, 0.005, 0.005); 
         scene.add(object)
     },
