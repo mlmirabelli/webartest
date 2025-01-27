@@ -24,7 +24,7 @@ function hideUI()
 
 var onRenderFcts = [];
 var arToolkitContext, arMarkerControls;
-initARContext();
+iscene.visible = false
 
 var arToolkitSource = new ArToolkitSource({
 	// to read from the webcam
@@ -43,7 +43,7 @@ arToolkitSource.init(function onReady() {
 			arToolkitSource.domElement.videoHeight
 		);
 
-		//initARContext();
+		initARContext();
 	});
 	window.arToolkitSource = arToolkitSource;
 	setTimeout(() => {
@@ -94,7 +94,7 @@ function initARContext() { // create atToolkitContext
 		changeMatrixMode: 'cameraTransformMatrix'
 	})
 
-	scene.visible = false
+	//scene.visible = false
 
 	console.log('ArMarkerControls', arMarkerControls);
 	window.arMarkerControls = arMarkerControls;
