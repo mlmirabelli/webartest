@@ -24,7 +24,7 @@ function hideUI()
 
 var onRenderFcts = [];
 var arToolkitContext, arMarkerControls;
-iscene.visible = false
+scene.visible = false
 
 var arToolkitSource = new ArToolkitSource({
 	// to read from the webcam
