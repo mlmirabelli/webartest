@@ -78,8 +78,8 @@ function initARContext() { // create atToolkitContext
 	arToolkitContext.init(() => { // copy projection matrix to camera
 		camera.projectionMatrix.copy(arToolkitContext.getProjectionMatrix());
 
-		arToolkitContext.arController.orientation = getSourceOrientation();
-		arToolkitContext.arController.options.orientation = getSourceOrientation();
+		//arToolkitContext.arController.orientation = getSourceOrientation();
+		//arToolkitContext.arController.options.orientation = getSourceOrientation();
 
 		console.log('arToolkitContext', arToolkitContext);
 		window.arToolkitContext = arToolkitContext;
