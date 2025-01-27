@@ -135,10 +135,16 @@ onRenderFcts.push(function () {
 //////////////////////////////////////////////////////////////////////////////////
 //		add an object in the scene
 //////////////////////////////////////////////////////////////////////////////////
-/*const fbxLoader = new FBXLoader()
+const fbxLoader = new FBXLoader()
 fbxLoader.load(
     'https://mlmirabelli.github.io/webartest/media/3DPointer.fbx',
     (object) => {
+		object.traverse(function (child) {
+			if (child.isMesh) {
+			  child.material.map = null;
+			}
+		  });
+		  //object.scale.set(100, 100, 100); 
         scene.add(object)
     },
     (xhr) => {
@@ -147,23 +153,9 @@ fbxLoader.load(
     (error) => {
         console.log(error)
     }
-)*/
-
-/*fbxLoader.onReady(function(object)
-	{
-		object.traverse( function ( child ) {
-
-			if ( child.isMesh ) {
-		
-				child.material.map = null;
-		
-			}
-		
-		} );
-	})*/
+)
 
 // add a torus knot
-
 var geometry = new THREE.BoxGeometry(1, 1, 1);
 var material = new THREE.MeshNormalMaterial({
 	transparent: true,
