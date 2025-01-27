@@ -143,10 +143,10 @@ fbxLoader.load(
 			if (child instanceof THREE.Mesh) {
 				child.material = new THREE.MeshNormalMaterial();
 				child.material.needsUpdate = true;
-
-				child.position.y = 3;
 			}
 		});
+		object.position.y = 2;
+		object.rotatation.y = Math.PI / 180 - 45;
 		object.scale.set(0.005, 0.005, 0.005); 
         scene.add(object)
     },
