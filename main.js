@@ -135,7 +135,7 @@ onRenderFcts.push(function () {
 //////////////////////////////////////////////////////////////////////////////////
 //		add an object in the scene
 //////////////////////////////////////////////////////////////////////////////////
-const colorRed = new THREE.Color().setRGB( 0.93, 0.19, 0.14 );
+const colorRed = new THREE.Color().setRGB( 238, 50, 36 );
 const fbxLoader = new FBXLoader()
 fbxLoader.load(
     'https://mlmirabelli.github.io/webartest/media/3DPointer.fbx',
