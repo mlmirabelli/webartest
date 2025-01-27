@@ -150,7 +150,7 @@ fbxLoader.load(
 				child.material.needsUpdate = true;
 			}
 		});*/
-		object.mesh.material = new THREE.MeshNormalMaterial();
+		//object.mesh.material = new THREE.MeshNormalMaterial();
 		object.scale.set(0.005, 0.005, 0.005); 
         scene.add(object)
     },
