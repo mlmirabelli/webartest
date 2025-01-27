@@ -179,9 +179,9 @@ var mesh = new THREE.Mesh(geometry, material);
 mesh.position.y = 0.5
 scene.add(mesh);
 
-onRenderFcts.push(function (delta) {
+/*onRenderFcts.push(function (delta) {
 	mesh.rotation.x += Math.PI * delta
-})
+})*/
 
 //////////////////////////////////////////////////////////////////////////////////
 //		render the whole thing on the page
