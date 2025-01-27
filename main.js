@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { FBXLoader } from 'fbxloader'
 import { ArToolkitSource, ArToolkitContext, ArMarkerControls }  from 'threex';
 
 ArToolkitContext.baseURL = '../'
@@ -23,7 +24,7 @@ function hideUI()
 
 var onRenderFcts = [];
 var arToolkitContext, arMarkerControls;
-initARContext();
+//initARContext();
 
 var arToolkitSource = new ArToolkitSource({
 	// to read from the webcam
@@ -80,7 +81,7 @@ function initARContext() { // create atToolkitContext
 		arToolkitContext.arController.orientation = getSourceOrientation();
 		arToolkitContext.arController.options.orientation = getSourceOrientation();
 
-		console.log('arToolkitContext bleh blip bloop', arToolkitContext);
+		console.log('arToolkitContext', arToolkitContext);
 		window.arToolkitContext = arToolkitContext;
 	})
 
@@ -98,7 +99,6 @@ function initARContext() { // create atToolkitContext
 	console.log('ArMarkerControls', arMarkerControls);
 	window.arMarkerControls = arMarkerControls;
 }
-
 
 function getSourceOrientation() {
 	if (!arToolkitSource) {
@@ -135,6 +135,19 @@ onRenderFcts.push(function () {
 //////////////////////////////////////////////////////////////////////////////////
 //		add an object in the scene
 //////////////////////////////////////////////////////////////////////////////////
+const fbxLoader = new FBXLoader()
+fbxLoader.load(
+    'https://mlmirabelli.github.io/webartest/media/3DPointer.fbx',
+    (object) => {
+        scene.add(object)
+    },
+    (xhr) => {
+        console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+    },
+    (error) => {
+        console.log(error)
+    }
+)
 
 // add a torus knot
 var geometry = new THREE.BoxGeometry(1, 1, 1);
