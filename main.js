@@ -135,7 +135,7 @@ onRenderFcts.push(function () {
 //////////////////////////////////////////////////////////////////////////////////
 //		add an object in the scene
 //////////////////////////////////////////////////////////////////////////////////
-
+const colorRed = new THREE.Color().setRGB( 0.93, 0.19, 0.14 );
 const fbxLoader = new FBXLoader()
 fbxLoader.load(
     'https://mlmirabelli.github.io/webartest/media/3DPointer.fbx',
@@ -143,7 +143,7 @@ fbxLoader.load(
 		object.traverse(function (child) {
 			if (child instanceof THREE.Mesh) {
 				console.log("found a mesh");
-				child.material = new THREE.MeshNormalMaterial();
+				child.material = new THREE.MeshStandardMaterial({color: colorRed});
 				child.material.needsUpdate = true;
 			}
 		});
