@@ -144,7 +144,7 @@ fbxLoader.load(
 			  child.material.map = null;
 			}
 		  });*/
-		  object.scale.set(0.5, 0.5, 0.5); 
+		  object.scale.set(0.005, 0.005, 0.005); 
         scene.add(object)
     },
     (xhr) => {
