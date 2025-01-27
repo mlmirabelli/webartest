@@ -145,6 +145,7 @@ fbxLoader.load(
 				child.material.needsUpdate = true;
 			}
 		});
+		object.position.y += 1;
 		object.scale.set(0.005, 0.005, 0.005); 
         scene.add(object)
     },
