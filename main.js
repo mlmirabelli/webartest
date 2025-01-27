@@ -145,8 +145,6 @@ fbxLoader.load(
 				child.material.needsUpdate = true;
 			}
 		});
-		object.position.y = 2;
-		object.rotatation.y = Math.PI / 180 - 45;
 		object.scale.set(0.005, 0.005, 0.005); 
         scene.add(object)
     },
