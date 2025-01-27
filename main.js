@@ -95,6 +95,7 @@ function initARContext() { // create atToolkitContext
 	})
 
 	scene.visible = false
+	addTorusKnot();
 
 	console.log('ArMarkerControls', arMarkerControls);
 	window.arMarkerControls = arMarkerControls;
@@ -135,7 +136,7 @@ onRenderFcts.push(function () {
 //////////////////////////////////////////////////////////////////////////////////
 //		add an object in the scene
 //////////////////////////////////////////////////////////////////////////////////
-const fbxLoader = new FBXLoader()
+/*const fbxLoader = new FBXLoader()
 fbxLoader.load(
     'https://mlmirabelli.github.io/webartest/media/3DPointer.fbx',
     (object) => {
@@ -147,28 +148,44 @@ fbxLoader.load(
     (error) => {
         console.log(error)
     }
-)
+)*/
+
+/*fbxLoader.onReady(function(object)
+	{
+		object.traverse( function ( child ) {
+
+			if ( child.isMesh ) {
+		
+				child.material.map = null;
+		
+			}
+		
+		} );
+	})*/
 
 // add a torus knot
-var geometry = new THREE.BoxGeometry(1, 1, 1);
-var material = new THREE.MeshNormalMaterial({
-	transparent: true,
-	opacity: 0.5,
-	side: THREE.DoubleSide
-});
-var mesh = new THREE.Mesh(geometry, material);
-mesh.position.y = geometry.parameters.height / 2
-scene.add(mesh);
 
-var geometry = new THREE.TorusKnotGeometry(0.3, 0.1, 64, 16);
-var material = new THREE.MeshNormalMaterial();
-var mesh = new THREE.Mesh(geometry, material);
-mesh.position.y = 0.5
-scene.add(mesh);
+function addTorusKnot(){
+	var geometry = new THREE.BoxGeometry(1, 1, 1);
+	var material = new THREE.MeshNormalMaterial({
+		transparent: true,
+		opacity: 0.5,
+		side: THREE.DoubleSide
+	});
+	var mesh = new THREE.Mesh(geometry, material);
+	mesh.position.y = geometry.parameters.height / 2
+	scene.add(mesh);
 
-onRenderFcts.push(function (delta) {
-	mesh.rotation.x += Math.PI * delta
-})
+	var geometry = new THREE.TorusKnotGeometry(0.3, 0.1, 64, 16);
+	var material = new THREE.MeshNormalMaterial();
+	var mesh = new THREE.Mesh(geometry, material);
+	mesh.position.y = 0.5
+	scene.add(mesh);
+
+	onRenderFcts.push(function (delta) {
+		mesh.rotation.x += Math.PI * delta
+	})
+}
 
 //////////////////////////////////////////////////////////////////////////////////
 //		render the whole thing on the page
