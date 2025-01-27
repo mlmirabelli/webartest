@@ -78,8 +78,8 @@ function initARContext() { // create atToolkitContext
 	arToolkitContext.init(() => { // copy projection matrix to camera
 		camera.projectionMatrix.copy(arToolkitContext.getProjectionMatrix());
 
-		//arToolkitContext.arController.orientation = getSourceOrientation();
-		//arToolkitContext.arController.options.orientation = getSourceOrientation();
+		arToolkitContext.arController.orientation = getSourceOrientation();
+		arToolkitContext.arController.options.orientation = getSourceOrientation();
 
 		console.log('arToolkitContext', arToolkitContext);
 		window.arToolkitContext = arToolkitContext;
@@ -141,9 +141,10 @@ fbxLoader.load(
     (object) => {
 		object.traverse(function (child) {
 			if (child instanceof THREE.Mesh) {
-				console.log("found a mesh");
 				child.material = new THREE.MeshNormalMaterial();
 				child.material.needsUpdate = true;
+
+				child.position.y = 3;
 			}
 		});
 		object.scale.set(0.005, 0.005, 0.005); 
