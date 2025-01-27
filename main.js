@@ -163,7 +163,7 @@ fbxLoader.load(
 )
 
 // add a torus knot
-var geometry = new THREE.BoxGeometry(1, 1, 1);
+/*var geometry = new THREE.BoxGeometry(1, 1, 1);
 var material = new THREE.MeshNormalMaterial({
 	transparent: true,
 	opacity: 0.5,
@@ -179,7 +179,7 @@ var mesh = new THREE.Mesh(geometry, material);
 mesh.position.y = 0.5
 scene.add(mesh);
 
-/*onRenderFcts.push(function (delta) {
+onRenderFcts.push(function (delta) {
 	mesh.rotation.x += Math.PI * delta
 })*/
 
