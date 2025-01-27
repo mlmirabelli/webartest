@@ -24,7 +24,7 @@ function hideUI()
 
 var onRenderFcts = [];
 var arToolkitContext, arMarkerControls;
-//initARContext();
+initARContext();
 
 var arToolkitSource = new ArToolkitSource({
 	// to read from the webcam
@@ -43,7 +43,7 @@ arToolkitSource.init(function onReady() {
 			arToolkitSource.domElement.videoHeight
 		);
 
-		initARContext();
+		//initARContext();
 	});
 	window.arToolkitSource = arToolkitSource;
 	setTimeout(() => {
