@@ -135,7 +135,7 @@ onRenderFcts.push(function () {
 //////////////////////////////////////////////////////////////////////////////////
 //		add an object in the scene
 //////////////////////////////////////////////////////////////////////////////////
-const redMaterial = new THREE.MeshStandardMaterial({color: 0xee3224, roughness: 0.2});
+const redMaterial = new THREE.MeshNormalMaterial();
 
 const fbxLoader = new FBXLoader()
 fbxLoader.load(
