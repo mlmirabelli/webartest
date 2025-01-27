@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { FBXLoader } from 'fbxloader'
+import { FBXLoader } from 'fbxloader';
 import { ArToolkitSource, ArToolkitContext, ArMarkerControls }  from 'threex';
 
 ArToolkitContext.baseURL = '../'
