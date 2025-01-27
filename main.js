@@ -137,14 +137,14 @@ onRenderFcts.push(function () {
 //////////////////////////////////////////////////////////////////////////////////
 const fbxLoader = new FBXLoader()
 fbxLoader.load(
-    'https://mlmirabelli.github.io/webartest/media/propsheart.fbx',
+    'https://mlmirabelli.github.io/webartest/media/3DPointer.fbx',
     (object) => {
 		/*object.traverse(function (child) {
 			if (child.isMesh) {
 			  child.material.map = null;
 			}
 		  });*/
-		  object.scale.set(0.001, 0.001, 0.001); 
+		  object.scale.set(0.5, 0.5, 0.5); 
         scene.add(object)
     },
     (xhr) => {
