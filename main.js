@@ -151,8 +151,7 @@ fbxLoader.load(
 					map: texture,
 					depthTest: false,
         			depthWrite: false,
-					flatShading: true,
-					emissive: 0x8c8c8c
+					flatShading: true
                 } );
 				//child.material.map = texture;
 				child.material = standardMaterial;
