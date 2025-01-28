@@ -145,7 +145,7 @@ fbxLoader.load(
 				child.material.needsUpdate = true;
 			}
 		});
-		object.position.y += 1;
+		object.position.y -= 1;
 		object.rotation.x -= Math.PI / 2;
 		object.scale.set(0.005, 0.005, 0.005); 
         scene.add(object)
@@ -157,27 +157,6 @@ fbxLoader.load(
         console.log(error)
     }
 )
-
-// add a torus knot
-/*var geometry = new THREE.BoxGeometry(1, 1, 1);
-var material = new THREE.MeshNormalMaterial({
-	transparent: true,
-	opacity: 0.5,
-	side: THREE.DoubleSide
-});
-var mesh = new THREE.Mesh(geometry, material);
-mesh.position.y = geometry.parameters.height / 2
-scene.add(mesh);
-
-var geometry = new THREE.TorusKnotGeometry(0.3, 0.1, 64, 16);
-var material = new THREE.MeshNormalMaterial();
-var mesh = new THREE.Mesh(geometry, material);
-mesh.position.y = 0.5
-scene.add(mesh);
-
-onRenderFcts.push(function (delta) {
-	mesh.rotation.x += Math.PI * delta
-})*/
 
 //////////////////////////////////////////////////////////////////////////////////
 //		render the whole thing on the page
