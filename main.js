@@ -149,9 +149,10 @@ fbxLoader.load(
                     metalness: 0.5,
                     roughness: 0.5,
 					map: texture,
-					depthTest: false,
-        			depthWrite: false,
-					flatShading: true
+					depthTest: true,
+        			depthWrite: true,
+					flatShading: true,
+					emissive: 0x4b4b4b
                 } );
 				//child.material.map = texture;
 				child.material = standardMaterial;
