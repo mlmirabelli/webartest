@@ -144,18 +144,17 @@ fbxLoader.load(
 		object.traverse(function (child) {
 		if (child instanceof THREE.Mesh) {
 			textureLoader.load( 'https://mlmirabelli.github.io/webartest/media/Plane_diffuse.png', ( texture ) => {   
-				const standardMaterial = new THREE.MeshStandardMaterial( {
+				const planeMaterial = new THREE.MeshStandardMaterial( {
                     color: 0xffffff,
-                    metalness: 0.5,
-                    roughness: 0.5,
+                    metalness: 0,
+                    roughness: 0,
 					map: texture,
 					depthTest: true,
         			depthWrite: true,
-					flatShading: true,
-					emissive: 0x4b4b4b
+					flatShading: true
                 } );
 				//child.material.map = texture;
-				child.material = standardMaterial;
+				child.material = planeMaterial;
 				child.material.needsupdate = true;
 				console.log(texture)
 				// render(); // only if there is no render loop
