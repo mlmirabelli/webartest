@@ -14,8 +14,11 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.getElementById("objs3D").appendChild( renderer.domElement );
+renderer.gammaInput = true;
+renderer.gammaOutput = true;
 
 var light = new THREE.DirectionalLight(0xffffff);
+//light.position.copy(camera.position);
 scene.add(light);
 
 var onRenderFcts = [];
@@ -139,8 +142,15 @@ fbxLoader.load(
     (object) => {
 		object.traverse(function (child) {
 		if (child instanceof THREE.Mesh) {
-			textureLoader.load( 'https://mlmirabelli.github.io/webartest/media/Plane_diffuse.png', ( texture ) => {    
-				child.material.map = texture;
+			textureLoader.load( 'https://mlmirabelli.github.io/webartest/media/Plane_diffuse.png', ( texture ) => {   
+				const standardMaterial = new THREE.MeshStandardMaterial( {
+                    color: 0xffffff,
+                    metalness: 0.5,
+                    roughness: 0.5,
+					map: texture
+                } );
+				//child.material.map = texture;
+				child.material = standardMaterial;
 				child.material.needsupdate = true;
 				console.log(texture)
 				// render(); // only if there is no render loop
