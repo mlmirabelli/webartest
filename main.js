@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { FBXLoader } from 'fbxloader';
+import { DAELoader } from 'daeloader';
 import { ArToolkitSource, ArToolkitContext, ArMarkerControls }  from 'threex';
 
 ArToolkitContext.baseURL = '../'
@@ -136,18 +137,18 @@ onRenderFcts.push(function () {
 //		add an object in the scene                                              //
 //////////////////////////////////////////////////////////////////////////////////
 const fbxLoader = new FBXLoader()
-fbxLoader.load(
+const daeLoader = new DAELoader()
+daeLoader.load(
     'https://mlmirabelli.github.io/webartest/media/3DPointer.fbx',
     (object) => {
 		object.traverse(function (child) {
 			if (child instanceof THREE.Mesh) {
 				child.material = new THREE.MeshNormalMaterial();
 				child.material.needsUpdate = true;
-				child.setRotationFromAxisAngle(new THREE.Vector3(0,1,0), 0);
 			}
 		});
-		object.position.y -= 5;
-		//object.rotation.x -= Math.PI / 2;
+		object.position.y += 1;
+		object.rotation.x -= Math.PI / 2;
 		object.scale.set(0.005, 0.005, 0.005); 
         scene.add(object)
     },
