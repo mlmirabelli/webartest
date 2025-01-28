@@ -65,7 +65,7 @@ function onResize() {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-//          initialize arToolkitContext
+//          initialize arToolkitContext                                       //
 ////////////////////////////////////////////////////////////////////////////////
 
 
@@ -91,7 +91,7 @@ function initARContext() { // create atToolkitContext
 		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-binoculars.patt',
 		//patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji',
 		// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'
-		changeMatrixMode: 'cameraTransformMatrix'
+		//changeMatrixMode: 'cameraTransformMatrix'
 	})
 
 	//scene.visible = false
@@ -133,7 +133,7 @@ onRenderFcts.push(function () {
 })
 
 //////////////////////////////////////////////////////////////////////////////////
-//		add an object in the scene
+//		add an object in the scene                                              //
 //////////////////////////////////////////////////////////////////////////////////
 const fbxLoader = new FBXLoader()
 fbxLoader.load(
@@ -159,7 +159,7 @@ fbxLoader.load(
 )
 
 //////////////////////////////////////////////////////////////////////////////////
-//		render the whole thing on the page
+//		render the whole thing on the page                                      //
 //////////////////////////////////////////////////////////////////////////////////
 
 // render the scene
