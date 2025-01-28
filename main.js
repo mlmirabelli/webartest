@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 import { FBXLoader } from 'fbxloader';
-import { DAELoader } from 'daeloader';
 import { ArToolkitSource, ArToolkitContext, ArMarkerControls }  from 'threex';
 
 ArToolkitContext.baseURL = '../'
@@ -137,9 +136,8 @@ onRenderFcts.push(function () {
 //		add an object in the scene                                              //
 //////////////////////////////////////////////////////////////////////////////////
 const fbxLoader = new FBXLoader()
-const daeLoader = new DAELoader()
-daeLoader.load(
-    'https://mlmirabelli.github.io/webartest/media/model.dae', //3DPointer.fbx
+fbxLoader.load(
+    'https://mlmirabelli.github.io/webartest/media/LowPolyPlane01.FBX', //3DPointer.fbx
     (object) => {
 		object.traverse(function (child) {
 			if (child instanceof THREE.Mesh) {
