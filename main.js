@@ -91,7 +91,7 @@ function initARContext() { // create atToolkitContext
 		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-binoculars.patt',
 		//patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji',
 		// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'
-		//changeMatrixMode: 'cameraTransformMatrix'
+		changeMatrixMode: 'cameraTransformMatrix'
 	})
 
 	//scene.visible = false
@@ -143,10 +143,11 @@ fbxLoader.load(
 			if (child instanceof THREE.Mesh) {
 				child.material = new THREE.MeshNormalMaterial();
 				child.material.needsUpdate = true;
+				child.setRotationFromAxisAngle(new THREE.Vector3(0,1,0), 0);
 			}
 		});
 		object.position.y -= 5;
-		object.rotation.x -= Math.PI / 2;
+		//object.rotation.x -= Math.PI / 2;
 		object.scale.set(0.005, 0.005, 0.005); 
         scene.add(object)
     },
