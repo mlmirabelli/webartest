@@ -17,9 +17,10 @@ document.getElementById("objs3D").appendChild( renderer.domElement );
 renderer.gammaInput = true;
 renderer.gammaOutput = true;
 
-var light = new THREE.DirectionalLight(0xffffff);
-//light.position.copy(camera.position);
-scene.add(light);
+var aLight = new THREE.AmbientLight(0xffffff);
+var dLight = new THREE.DirectionalLight(0xffffff);
+dLight.position.copy(camera.position);
+scene.add(dLight, aLight);
 
 var onRenderFcts = [];
 var arToolkitContext, arMarkerControls;
