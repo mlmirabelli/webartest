@@ -150,8 +150,7 @@ fbxLoader.load(
                     roughness: 0,
 					map: texture,
 					depthTest: true,
-        			depthWrite: true,
-					flatShading: true
+        			depthWrite: true
                 } );
 				//child.material.map = texture;
 				child.material = planeMaterial;
