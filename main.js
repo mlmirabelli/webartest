@@ -147,7 +147,8 @@ fbxLoader.load(
 		});
 		object.position.y += 1;
 		object.rotation.x -= Math.PI / 2;
-		object.scale.set(0.5, 0.5, 0.5); 
+		object.rotation.y -= Math.PI / 2;
+		object.scale.set(0.2, 0.2, 0.2); 
         scene.add(object)
     },
     (xhr) => {
