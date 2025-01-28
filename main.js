@@ -135,18 +135,19 @@ onRenderFcts.push(function () {
 //////////////////////////////////////////////////////////////////////////////////
 //		add an object in the scene                                              //
 //////////////////////////////////////////////////////////////////////////////////
-const fbxLoader = new FBXLoader()
+const fbxLoader = new FBXLoader();
+const textureLoader = new THREE.TextureLoader();
+
 fbxLoader.load(
     'https://mlmirabelli.github.io/webartest/media/LowPolyPlane01.FBX', //3DPointer.fbx
     (object) => {
 		object.traverse(function (child) {
 		if (child instanceof THREE.Mesh) {
 			textureLoader.load( 'https://mlmirabelli.github.io/webartest/media/Plane_diffuse.png', ( texture ) => {    
-					child.material.map = texture;
-					child.material.needsupdate = true;
-					console.log(texture)
-					// render(); // only if there is no render loop
-				
+				child.material.map = texture;
+				child.material.needsupdate = true;
+				console.log(texture)
+				// render(); // only if there is no render loop
 				});
 				console.log( child.geometry.attributes.uv );
 				
