@@ -148,7 +148,11 @@ fbxLoader.load(
                     color: 0xffffff,
                     metalness: 0.5,
                     roughness: 0.5,
-					map: texture
+					map: texture,
+					depthTest: false,
+        			depthWrite: false,
+					flatShading: true,
+					emissive: 0x8c8c8c
                 } );
 				//child.material.map = texture;
 				child.material = standardMaterial;
