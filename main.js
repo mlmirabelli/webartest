@@ -15,12 +15,8 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.getElementById("objs3D").appendChild( renderer.domElement );
 
-document.getElementById("continueButton").onclick = hideUI;
-
-function hideUI()
-{
-	document.getElementById("uiContainer").style.display = "none";
-}
+var light = new THREE.AmbientLight(0xffffff);
+scene.add(light);
 
 var onRenderFcts = [];
 var arToolkitContext, arMarkerControls;
