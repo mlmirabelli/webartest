@@ -139,7 +139,7 @@ onRenderFcts.push(function () {
 const fbxLoader = new FBXLoader()
 const daeLoader = new DAELoader()
 daeLoader.load(
-    'https://mlmirabelli.github.io/webartest/media/3DPointer.fbx',
+    'https://mlmirabelli.github.io/webartest/media/model.dae', //3DPointer.fbx
     (object) => {
 		object.traverse(function (child) {
 			if (child instanceof THREE.Mesh) {
