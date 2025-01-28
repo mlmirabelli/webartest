@@ -15,7 +15,7 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.getElementById("objs3D").appendChild( renderer.domElement );
 
-var light = new THREE.AmbientLight(0xffffff);
+var light = new THREE.DirectionalLight(0xffffff);
 scene.add(light);
 
 var onRenderFcts = [];
