@@ -21,17 +21,20 @@ var aLight = new THREE.AmbientLight(0xffffff);
 var dLight1 = new THREE.DirectionalLight(0xffffff);
 var dLight2 = new THREE.DirectionalLight(0xffffff);
 var dLight3 = new THREE.DirectionalLight(0xffffff);
+dLight1.target(0, 0, 2);
+dLight2.target(0, 0, 2);
+dLight3.target(0, 0, 2);
 
 dLight1.position.y +=3 ;
-dLight1.position.z +=3 ; 
+dLight1.position.z -=3 ; 
 
 dLight2.position.y +=3 ; 
 dLight2.position.x +=3 ; 
-dLight2.position.z +=3 ; 
+dLight2.position.z -=3 ; 
 
 dLight3.position.y +=3 ; 
 dLight3.position.x -=3 ; 
-dLight3.position.z +=3 ; 
+dLight3.position.z -=3 ; 
 
 dLight1.castShadow = false;
 dLight2.castShadow = false;
@@ -40,7 +43,7 @@ dLight3.castShadow = false;
 const helper1 = new THREE.DirectionalLightHelper( dLight1, 5 );
 const helper2 = new THREE.DirectionalLightHelper( dLight2, 5 );
 const helper3 = new THREE.DirectionalLightHelper( dLight3, 5 );
-scene.add(dLight1, dLight2, dLight3, aLight, helper1, helper2, helper3);
+scene.add(dLight1, dLight2, dLight3, dLight1.target, dLight2.target, dLight3.target, aLight, helper1, helper2, helper3);
 
 var onRenderFcts = [];
 var arToolkitContext, arMarkerControls;
