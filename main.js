@@ -228,13 +228,14 @@ modelLoader2.load(
 		var ogVerticalPosition = object.position.z;
 
 		onRenderFcts.push(function (delta) {
-			if(object.position.z < ogVerticalPosition + 1){
-				object.position.z += 0.1
+			if(object.position.z >= (ogVerticalPosition + 5)){
+				movDirection = -1;
 			}
-			else
-			{
-				object.position.z -= 0.1
+			else if(object.position.z <= (ogVerticalPosition - 5)){
+				movDireciton = 1;
 			}
+
+			object.position.z += 0.1*movDirection
 		})
     },
     (xhr) => {
