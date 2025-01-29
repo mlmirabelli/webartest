@@ -164,9 +164,10 @@ onRenderFcts.push(function () {
 //////////////////////////////////////////////////////////////////////////////////
 const fbxLoader = new FBXLoader();
 //const textureLoader = new THREE.TextureLoader();
+var amusementParkObj;
 
 fbxLoader.load(
-    'https://mlmirabelli.github.io/webartest/media/AmusementPark-Island.fbx', //3DPointer.fbx
+    'https://mlmirabelli.github.io/webartest/media/carousel.fbx', //3DPointer.fbx
     (object) => {
 		object.traverse(function (child) {
 		if (child instanceof THREE.Mesh) {
@@ -194,7 +195,8 @@ fbxLoader.load(
 		object.rotation.x -= Math.PI / 2;
 		//object.rotation.y -= Math.PI / 2;
 		object.scale.set(0.005, 0.005, 0.005); 
-        scene.add(object);
+		amusementParkObj = object;
+        scene.add(amusementParkObj);
     },
     (xhr) => {
         console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
@@ -203,6 +205,10 @@ fbxLoader.load(
         console.log(error)
     }
 )
+
+onRenderFcts.push(function (delta) {
+	amusementParkObj.rotation.x += Math.PI * delta
+})
 
 //////////////////////////////////////////////////////////////////////////////////
 //		render the whole thing on the page                                      //
