@@ -218,8 +218,8 @@ fbxLoader2.load(
 			});
 		object.position.y += 1;
 		//object.position.z += 0.5;
-		//object.rotation.x -= Math.PI / 2;
-		object.scale.set(0.05, 0.05, 0.05); 
+		object.rotation.x -= Math.PI / 2;
+		object.scale.set(0.005, 0.005, 0.005); 
 		airportObj = object;
         markerRoot2.add(airportObj);
     },
