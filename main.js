@@ -18,9 +18,9 @@ renderer.gammaInput = true;
 renderer.gammaOutput = true;
 
 var aLight = new THREE.AmbientLight(0xffffff);
-var dLight = new THREE.DirectionalLight(0xffffff);
-dLight.position.copy(camera.position);
-scene.add(dLight, aLight);
+var pLight = new THREE.PointLight(0xffffff);
+pLight.position.copy(camera.position);
+scene.add(pLight, aLight);
 
 var onRenderFcts = [];
 var arToolkitContext, arMarkerControls;
@@ -136,7 +136,7 @@ onRenderFcts.push(function () {
 //		add an object in the scene                                              //
 //////////////////////////////////////////////////////////////////////////////////
 const fbxLoader = new FBXLoader();
-const textureLoader = new THREE.TextureLoader();
+//const textureLoader = new THREE.TextureLoader();
 
 fbxLoader.load(
     'https://mlmirabelli.github.io/webartest/media/AmusementPark-Island.fbx', //3DPointer.fbx
@@ -169,8 +169,8 @@ fbxLoader.load(
 		})*/
 		object.position.y += 1;
 		object.rotation.x -= Math.PI / 2;
-		object.rotation.y -= Math.PI / 2;
-		object.scale.set(0.02, 0.02, 0.02); 
+		//object.rotation.y -= Math.PI / 2;
+		object.scale.set(0.01, 0.01, 0.01); 
         scene.add(object)
     },
     (xhr) => {
