@@ -139,9 +139,9 @@ const fbxLoader = new FBXLoader();
 const textureLoader = new THREE.TextureLoader();
 
 fbxLoader.load(
-    'https://mlmirabelli.github.io/webartest/media/LowPolyPlane01.FBX', //3DPointer.fbx
+    'https://mlmirabelli.github.io/webartest/media/AmusementPark-Island.fbx', //3DPointer.fbx
     (object) => {
-		object.traverse(function (child) {
+		/*object.traverse(function (child) {
 		if (child instanceof THREE.Mesh) {
 			textureLoader.load( 'https://mlmirabelli.github.io/webartest/media/Plane_diffuse.png', ( texture ) => {   
 				const planeMaterial = new THREE.MeshStandardMaterial( {
@@ -166,7 +166,7 @@ fbxLoader.load(
 			}
 			//child.material = new THREE.MeshNormalMaterial();
 			//child.material.needsUpdate = true;
-		})
+		})*/
 		object.position.y += 1;
 		object.rotation.x -= Math.PI / 2;
 		object.rotation.y -= Math.PI / 2;
