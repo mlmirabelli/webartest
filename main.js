@@ -181,12 +181,12 @@ fbxLoader.load(
                 } );*/
 				//child.material.map = texture;
 				//child.material = planeMaterial;
-				child.material = new THREE.MeshNormalMaterial;
+				child.material = new THREE.MeshNormalMaterial();
 				child.material.needsupdate = true;
 				//console.log(texture)
 				// render(); // only if there is no render loop
 				}
-				console.log( child.geometry.attributes.uv );
+				//console.log( child.geometry.attributes.uv );
 			});
 			//child.material = new THREE.MeshNormalMaterial();
 			//child.material.needsUpdate = true;
@@ -194,7 +194,7 @@ fbxLoader.load(
 		object.rotation.x -= Math.PI / 2;
 		//object.rotation.y -= Math.PI / 2;
 		object.scale.set(0.005, 0.005, 0.005); 
-        scene.add(object)
+        scene.add(object);
     },
     (xhr) => {
         console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
