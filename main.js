@@ -224,7 +224,7 @@ fbxLoader2.load(
         markerRoot2.add(airportObj);
     },
     (xhr) => {
-        console.log('Plane Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
+        console.log('Airport Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
     },
     (error) => {
         console.log(error)
@@ -232,12 +232,12 @@ fbxLoader2.load(
 )
 
 onRenderFcts.push(function (delta) {
-	if(PlaneObj.position.z < 1){
-		PlaneObj.position.z += 0.1
+	if(airportObj.position.z < 1){
+		airportObj.position.z += 0.1
 	}
 	else
 	{
-		PlaneObj.position.z -= 0.1
+		airportObj.position.z -= 0.1
 	}
 })
 
