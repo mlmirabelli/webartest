@@ -226,13 +226,12 @@ modelLoader2.load(
         markerRoot2.add(object);
 
 		var ogVerticalPosition = object.position.z;
+		var movDirection = 1;
+		var movDisplacement = 2;
 
 		onRenderFcts.push(function (delta) {
-			if(object.position.z >= (ogVerticalPosition + 5)){
-				movDirection = -1;
-			}
-			else if(object.position.z <= (ogVerticalPosition - 5)){
-				movDireciton = 1;
+			if(object.position.z >= (ogVerticalPosition + movDisplacement) || object.position.z <= (ogVerticalPosition - movDisplacement)){
+				movDirection *= -1;
 			}
 
 			object.position.z += 0.1*movDirection
