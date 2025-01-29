@@ -63,11 +63,9 @@ function onResize() {
 ////////////////////////////////////////////////////////////////////////////////
 const modelLoader1 = new FBXLoader();
 var markerRoot1 = new THREE.Group;
-var amusementParkObj;
 
-const modelLoader2 = new OBJLoader();
+const modelLoader2 = new FBXLoader();
 var markerRoot2 = new THREE.Group;
-var airportObj;
 
 /*const modelLoader3 = new OBJLoader();
 var markerRoot3 = new THREE.Group;
@@ -210,7 +208,7 @@ modelLoader1.load(
 )
 
 modelLoader2.load(
-    'https://mlmirabelli.github.io/webartest/media/toyPlane.obj',
+    'https://mlmirabelli.github.io/webartest/media/basic_plane_model.fbx',
     (object) => {
 		object.traverse(function (child) {
 		if (child instanceof THREE.Mesh) {
