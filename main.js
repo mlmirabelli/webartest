@@ -69,9 +69,9 @@ const modelLoader2 = new FBXLoader();
 var markerRoot2 = new THREE.Group;
 var airportObj;
 
-const modelLoader3 = new OBJLoader();
+/*const modelLoader3 = new OBJLoader();
 var markerRoot3 = new THREE.Group;
-var volcanoObj;
+var volcanoObj;*/
 
 function initARContext() { // create atToolkitContext
 	arToolkitContext = new ArToolkitContext({
