@@ -218,10 +218,11 @@ modelLoader2.load(
 				child.material.needsupdate = true;
 				}
 			});
-		//object.position.y += 1;
+		object.position.y += 1;
 		//object.position.z += 0.5;
+		object.rotation.y -= Math.PI / 2;
 		object.rotation.x -= Math.PI / 2;
-		object.scale.set(0.005, 0.005, 0.005); 
+		object.scale.set(0.002, 0.002, 0.002); 
         markerRoot2.add(object);
 
 		/*onRenderFcts.push(function (delta) {
