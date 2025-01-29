@@ -64,7 +64,9 @@ const fbxLoader1 = new FBXLoader();
 var markerRoot1 = new THREE.Group;
 var amusementParkObj;
 
+const fbxLoader2 = new FBXLoader();
 var markerRoot2 = new THREE.Group;
+var airportObj;
 
 function initARContext() { // create atToolkitContext
 	arToolkitContext = new ArToolkitContext({
@@ -158,7 +160,7 @@ onRenderFcts.push(function () {
 //////////////////////////////////////////////////////////////////////////////////
 
 fbxLoader1.load(
-    'https://mlmirabelli.github.io/webartest/media/carousel.fbx', //3DPointer.fbx
+    'https://mlmirabelli.github.io/webartest/media/carousel.fbx',
     (object) => {
 		object.traverse(function (child) {
 		if (child instanceof THREE.Mesh) {
@@ -192,7 +194,7 @@ fbxLoader1.load(
         markerRoot1.add(amusementParkObj);
     },
     (xhr) => {
-        console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+        console.log('Amusement Park Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
     },
     (error) => {
         console.log(error)
@@ -202,6 +204,43 @@ fbxLoader1.load(
 onRenderFcts.push(function (delta) {
 	amusementParkObj.rotation.y += Math.PI * delta / 2
 })
+
+fbxLoader2.load(
+    'https://mlmirabelli.github.io/webartest/media/Plane.fbx',
+    (object) => {
+		object.traverse(function (child) {
+		if (child instanceof THREE.Mesh) {
+				child.material = new THREE.MeshNormalMaterial({
+					side: THREE.DoubleSide
+				});
+				child.material.needsupdate = true;
+				}
+			});
+		object.position.y += 1;
+		//object.position.z += 0.5;
+		//object.rotation.x -= Math.PI / 2;
+		object.scale.set(0.05, 0.05, 0.05); 
+		airportObj = object;
+        markerRoot2.add(airportObj);
+    },
+    (xhr) => {
+        console.log('Plane Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
+    },
+    (error) => {
+        console.log(error)
+    }
+)
+
+onRenderFcts.push(function (delta) {
+	if(PlaneObj.position.z < 1){
+		PlaneObj.position.z += 0.1
+	}
+	else
+	{
+		PlaneObj.position.z -= 0.1
+	}
+})
+
 
 //////////////////////////////////////////////////////////////////////////////////
 //		render the whole thing on the page                                      //
