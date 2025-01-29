@@ -29,8 +29,10 @@ dLight1.castShadow = false;
 dLight2.castShadow = false;
 dLight3.castShadow = false;
 //pLight.position.copy(camera.position);
-const helper = new THREE.DirectionalLightHelper( dLight, 5 );
-scene.add(dLight1, dLight2, dLight3, aLight, helper);
+const helper1 = new THREE.DirectionalLightHelper( dLight1, 5 );
+const helper2 = new THREE.DirectionalLightHelper( dLight2, 5 );
+const helper3 = new THREE.DirectionalLightHelper( dLight3, 5 );
+scene.add(dLight1, dLight2, dLight3, aLight, helper1, helper2, helper3);
 
 var onRenderFcts = [];
 var arToolkitContext, arMarkerControls;
