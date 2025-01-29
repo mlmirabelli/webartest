@@ -222,19 +222,19 @@ modelLoader2.load(
 		//object.position.z += 0.5;
 		object.rotation.y -= Math.PI / 2;
 		object.rotation.x -= Math.PI / 2;
-		object.scale.set(0.002, 0.002, 0.002); 
+		object.scale.set(0.00075, 0.00075, 0.00075); 
         markerRoot2.add(object);
 
 		var ogVerticalPosition = object.position.z;
 		var movDirection = 1;
-		var movDisplacement = 2;
+		var movDisplacement = 1;
 
 		onRenderFcts.push(function (delta) {
 			if(object.position.z >= (ogVerticalPosition + movDisplacement) || object.position.z <= (ogVerticalPosition - movDisplacement)){
 				movDirection *= -1;
 			}
 
-			object.position.z += 0.1*movDirection
+			object.position.z += 0.08*movDirection
 		})
     },
     (xhr) => {
