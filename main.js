@@ -60,7 +60,8 @@ function onResize() {
 ////////////////////////////////////////////////////////////////////////////////
 //          initialize arToolkitContext                                       //
 ////////////////////////////////////////////////////////////////////////////////
-
+var markerRoot1 = new THREE.Group;
+var markerRoot2 = new THREE.Group;
 
 function initARContext() { // create atToolkitContext
 	arToolkitContext = new ArToolkitContext({
@@ -85,7 +86,6 @@ function initARContext() { // create atToolkitContext
 		//////////////////////////////////////////////////////////////////////////////
 	
 		// build markerControls
-		var markerRoot1 = new THREE.Group
 		markerRoot1.name = 'marker1'
 		var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
 			type: 'pattern',
@@ -97,7 +97,6 @@ function initARContext() { // create atToolkitContext
 		//////////////////////////////////////////////////////////////////////////////
 	
 		// build markerControls
-		var markerRoot2 = new THREE.Group
 		markerRoot2.name = 'marker2'
 		scene.add(markerRoot2)
 		var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
