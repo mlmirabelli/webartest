@@ -221,7 +221,7 @@ modelLoader2.load(
 		object.position.y += 1;
 		//object.position.z += 0.5;
 		object.rotation.x -= Math.PI / 2;
-		object.scale.set(0.5, 0.5, 0.5); 
+		object.scale.set(0.05, 0.05, 0.05); 
         markerRoot2.add(object);
 
 		onRenderFcts.push(function (delta) {
