@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { FBXLoader } from 'fbxloader';
+import { OBJLoader } from 'objloader';
 import { ArToolkitSource, ArToolkitContext, ArMarkerControls }  from 'threex';
 
 ArToolkitContext.baseURL = '../'
@@ -60,13 +61,17 @@ function onResize() {
 ////////////////////////////////////////////////////////////////////////////////
 //          initialize arToolkitContext                                       //
 ////////////////////////////////////////////////////////////////////////////////
-const fbxLoader1 = new FBXLoader();
+const modelLoader1 = new FBXLoader();
 var markerRoot1 = new THREE.Group;
 var amusementParkObj;
 
-const fbxLoader2 = new FBXLoader();
+const modelLoader2 = new FBXLoader();
 var markerRoot2 = new THREE.Group;
 var airportObj;
+
+const modelLoader3 = new OBJLoader();
+var markerRoot3 = new THREE.Group;
+var volcanoObj;
 
 function initARContext() { // create atToolkitContext
 	arToolkitContext = new ArToolkitContext({
@@ -159,7 +164,7 @@ onRenderFcts.push(function () {
 //		add an object in the scene                                              //
 //////////////////////////////////////////////////////////////////////////////////
 
-fbxLoader1.load(
+modelLoader1.load(
     'https://mlmirabelli.github.io/webartest/media/carousel.fbx',
     (object) => {
 		object.traverse(function (child) {
@@ -205,8 +210,8 @@ onRenderFcts.push(function (delta) {
 	amusementParkObj.rotation.y += Math.PI * delta / 2
 })
 
-fbxLoader2.load(
-    'https://mlmirabelli.github.io/webartest/media/Plane.fbx',
+modelLoader2.load(
+    'https://mlmirabelli.github.io/webartest/media/plane2.fbx',
     (object) => {
 		object.traverse(function (child) {
 		if (child instanceof THREE.Mesh) {
@@ -232,7 +237,7 @@ fbxLoader2.load(
 )
 
 onRenderFcts.push(function (delta) {
-	if(airportObj.position.z < 1){
+	if(airportObj.position.z < 10){
 		airportObj.position.z += 0.1
 	}
 	else
