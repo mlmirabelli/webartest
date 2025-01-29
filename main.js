@@ -60,7 +60,10 @@ function onResize() {
 ////////////////////////////////////////////////////////////////////////////////
 //          initialize arToolkitContext                                       //
 ////////////////////////////////////////////////////////////////////////////////
+const fbxLoader1 = new FBXLoader();
 var markerRoot1 = new THREE.Group;
+var amusementParkObj;
+
 var markerRoot2 = new THREE.Group;
 
 function initARContext() { // create atToolkitContext
@@ -79,30 +82,27 @@ function initARContext() { // create atToolkitContext
 		window.arToolkitContext = arToolkitContext;
 	})
 
-	;(function(){
+	//////////////////////////////////////////////////////////////////////////////
+	//		markerRoot1
+	//////////////////////////////////////////////////////////////////////////////
 
-		//////////////////////////////////////////////////////////////////////////////
-		//		markerRoot1
-		//////////////////////////////////////////////////////////////////////////////
-	
-		// build markerControls
-		markerRoot1.name = 'marker1'
-		var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
-			type: 'pattern',
-			patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-carousel.patt'
-		})
-	
-		//////////////////////////////////////////////////////////////////////////////
-		//		markerRoot2
-		//////////////////////////////////////////////////////////////////////////////
-	
-		// build markerControls
-		markerRoot2.name = 'marker2'
-		scene.add(markerRoot2)
-		var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
-			type: 'pattern',
-			patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-airport.patt',
-		})
+	// build markerControls
+	markerRoot1.name = 'marker1'
+	var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
+		type: 'pattern',
+		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-carousel.patt'
+	})
+
+	//////////////////////////////////////////////////////////////////////////////
+	//		markerRoot2
+	//////////////////////////////////////////////////////////////////////////////
+
+	// build markerControls
+	markerRoot2.name = 'marker2'
+	scene.add(markerRoot2)
+	var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
+		type: 'pattern',
+		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-airport.patt',
 	})
 
 	/*// MARKER 
@@ -155,8 +155,6 @@ onRenderFcts.push(function () {
 //////////////////////////////////////////////////////////////////////////////////
 //		add an object in the scene                                              //
 //////////////////////////////////////////////////////////////////////////////////
-const fbxLoader1 = new FBXLoader();
-var amusementParkObj;
 
 fbxLoader1.load(
     'https://mlmirabelli.github.io/webartest/media/carousel.fbx', //3DPointer.fbx
