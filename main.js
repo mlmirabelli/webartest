@@ -192,6 +192,7 @@ fbxLoader.load(
 			//child.material = new THREE.MeshNormalMaterial();
 			//child.material.needsUpdate = true;
 		object.position.y += 1;
+		object.position.z += 0.5;
 		object.rotation.x -= Math.PI / 2;
 		//object.rotation.y -= Math.PI / 2;
 		object.scale.set(0.05, 0.05, 0.05); 
@@ -207,7 +208,7 @@ fbxLoader.load(
 )
 
 onRenderFcts.push(function (delta) {
-	amusementParkObj.rotation.y += Math.PI * delta
+	amusementParkObj.rotation.y += Math.PI * delta / 2
 })
 
 //////////////////////////////////////////////////////////////////////////////////
