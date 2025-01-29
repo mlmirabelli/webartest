@@ -173,7 +173,9 @@ fbxLoader1.load(
                 } );*/
 				//child.material.map = texture;
 				//child.material = planeMaterial;
-				child.material = new THREE.MeshNormalMaterial();
+				child.material = new THREE.MeshNormalMaterial({
+					side: THREE.DoubleSide
+				});
 				child.material.needsupdate = true;
 				//console.log(texture)
 				// render(); // only if there is no render loop
