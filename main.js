@@ -14,7 +14,7 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.getElementById("objs3D").appendChild( renderer.domElement );
-renderer.gammaInput = true;
+/*renderer.gammaInput = true;
 renderer.gammaOutput = true;
 
 var aLight = new THREE.AmbientLight(0xffffff);
@@ -47,7 +47,7 @@ dLight3.castShadow = false;
 const helper1 = new THREE.DirectionalLightHelper( dLight1, 5 );
 const helper2 = new THREE.DirectionalLightHelper( dLight2, 5 );
 const helper3 = new THREE.DirectionalLightHelper( dLight3, 5 );
-scene.add(dLight1, dLight2, dLight3, aLight, helper1, helper2, helper3);
+scene.add(dLight1, dLight2, dLight3, aLight, helper1, helper2, helper3);*/
 
 var onRenderFcts = [];
 var arToolkitContext, arMarkerControls;
@@ -168,9 +168,9 @@ const fbxLoader = new FBXLoader();
 fbxLoader.load(
     'https://mlmirabelli.github.io/webartest/media/AmusementPark-Island.fbx', //3DPointer.fbx
     (object) => {
-		/*object.traverse(function (child) {
+		object.traverse(function (child) {
 		if (child instanceof THREE.Mesh) {
-			textureLoader.load( 'https://mlmirabelli.github.io/webartest/media/Plane_diffuse.png', ( texture ) => {   
+			/*textureLoader.load( 'https://mlmirabelli.github.io/webartest/media/Plane_diffuse.png', ( texture ) => {   
 				const planeMaterial = new THREE.MeshStandardMaterial( {
                     color: 0xffffff,
                     metalness: 0,
@@ -178,26 +178,22 @@ fbxLoader.load(
 					map: texture,
 					depthTest: true,
         			depthWrite: true
-                } );
+                } );*/
 				//child.material.map = texture;
-				child.material = planeMaterial;
+				//child.material = planeMaterial;
+				child.material = new THREE.MeshNormalMaterial;
 				child.material.needsupdate = true;
-				console.log(texture)
+				//console.log(texture)
 				// render(); // only if there is no render loop
-				});
+				}
 				console.log( child.geometry.attributes.uv );
-				
-				child.castShadow = true;
-				child.receiveShadow = true;
-
-			}
+			});
 			//child.material = new THREE.MeshNormalMaterial();
 			//child.material.needsUpdate = true;
-		})*/
 		object.position.y += 1;
 		object.rotation.x -= Math.PI / 2;
 		//object.rotation.y -= Math.PI / 2;
-		object.scale.set(0.01, 0.01, 0.01); 
+		object.scale.set(0.005, 0.005, 0.005); 
         scene.add(object)
     },
     (xhr) => {
