@@ -195,8 +195,11 @@ modelLoader1.load(
 		object.position.z += 0.5;
 		object.rotation.x -= Math.PI / 2;
 		object.scale.set(0.05, 0.05, 0.05); 
-		amusementParkObj = object;
-        markerRoot1.add(amusementParkObj);
+        markerRoot1.add(object);
+
+		onRenderFcts.push(function (delta) {
+			object.rotation.y += Math.PI * delta / 2
+		})
     },
     (xhr) => {
         console.log('Amusement Park Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
@@ -205,10 +208,6 @@ modelLoader1.load(
         console.log(error)
     }
 )
-
-onRenderFcts.push(function (delta) {
-	amusementParkObj.rotation.y += Math.PI * delta / 2
-})
 
 modelLoader2.load(
     'https://mlmirabelli.github.io/webartest/media/plane2.fbx',
@@ -225,8 +224,17 @@ modelLoader2.load(
 		//object.position.z += 0.5;
 		object.rotation.x -= Math.PI / 2;
 		object.scale.set(0.005, 0.005, 0.005); 
-		airportObj = object;
-        markerRoot2.add(airportObj);
+        markerRoot2.add(object);
+
+		onRenderFcts.push(function (delta) {
+			if(object.position.z < 10){
+				object.position.z += 0.1
+			}
+			else
+			{
+				object.position.z -= 0.1
+			}
+		})
     },
     (xhr) => {
         console.log('Airport Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
@@ -235,16 +243,6 @@ modelLoader2.load(
         console.log(error)
     }
 )
-
-onRenderFcts.push(function (delta) {
-	if(airportObj.position.z < 10){
-		airportObj.position.z += 0.1
-	}
-	else
-	{
-		airportObj.position.z -= 0.1
-	}
-})
 
 
 //////////////////////////////////////////////////////////////////////////////////
