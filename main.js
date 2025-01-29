@@ -222,7 +222,7 @@ modelLoader2.load(
 		//object.position.z += 0.5;
 		object.rotation.y -= Math.PI / 2;
 		object.rotation.x -= Math.PI / 2;
-		object.scale.set(0.00075, 0.00075, 0.00075); 
+		object.scale.set(0.00125, 0.00125, 0.00125); 
         markerRoot2.add(object);
 
 		var ogVerticalPosition = object.position.z;
