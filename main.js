@@ -88,6 +88,7 @@ function initARContext() { // create atToolkitContext
 
 	// build markerControls
 	markerRoot1.name = 'marker1'
+	scene.add(markerRoot1)
 	var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
 		type: 'pattern',
 		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-carousel.patt'
@@ -186,9 +187,7 @@ fbxLoader1.load(
 		object.rotation.x -= Math.PI / 2;
 		object.scale.set(0.05, 0.05, 0.05); 
 		amusementParkObj = object;
-
         markerRoot1.add(amusementParkObj);
-		scene.add(markerRoot1);
     },
     (xhr) => {
         console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
