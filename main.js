@@ -25,10 +25,12 @@ dLight1.position.y +=3 ;
 dLight2.position.y +=3 ; 
 dLight3.position.y +=3 ; 
 dLight2.rotation.z -= Math.PI / 2;
-dLight.castShadow = false;
+dLight1.castShadow = false;
+dLight2.castShadow = false;
+dLight3.castShadow = false;
 //pLight.position.copy(camera.position);
 const helper = new THREE.DirectionalLightHelper( dLight, 5 );
-scene.add(dLight, aLight, helper);
+scene.add(dLight1, dLight2, dLight3, aLight, helper);
 
 var onRenderFcts = [];
 var arToolkitContext, arMarkerControls;
