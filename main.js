@@ -23,7 +23,7 @@ var dLight2 = new THREE.DirectionalLight(0xffffff);
 var dLight3 = new THREE.DirectionalLight(0xffffff);
 
 var lightTarget = new THREE.Object3D();
-lightTarget.position.z -= 2;
+lightTarget.position.z -= 0.75;
 scene.add(lightTarget);
 dLight1.target = lightTarget;
 dLight2.target = lightTarget;
