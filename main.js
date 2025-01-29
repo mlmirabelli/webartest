@@ -18,9 +18,10 @@ renderer.gammaInput = true;
 renderer.gammaOutput = true;
 
 var aLight = new THREE.AmbientLight(0xffffff);
-var pLight = new THREE.PointLight(0xffffff);
-pLight.position.copy(camera.position);
-scene.add(pLight, aLight);
+var dLight = new THREE.DirectionalLight(0xffffff);
+//pLight.position.copy(camera.position);
+const helper = new THREE.DirectionalLightHelper( dLightlight, 5 );
+scene.add(dLight, aLight, helper);
 
 var onRenderFcts = [];
 var arToolkitContext, arMarkerControls;
