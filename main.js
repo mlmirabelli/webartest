@@ -207,7 +207,7 @@ fbxLoader.load(
 )
 
 onRenderFcts.push(function (delta) {
-	amusementParkObj.rotation.z += Math.PI * delta
+	amusementParkObj.rotation.y += Math.PI * delta
 })
 
 //////////////////////////////////////////////////////////////////////////////////
