@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { FBXLoader } from 'fbxloader';
-import { ArToolkitSource, ArToolkitContext, ArMarkerControls, ArMultiMarkerControls }  from 'threex';
+import { ArToolkitSource, ArToolkitContext, ArMarkerControls }  from 'threex';
 
 ArToolkitContext.baseURL = '../'
 
@@ -89,7 +89,7 @@ function initARContext() { // create atToolkitContext
 	// build markerControls
 	markerRoot1.name = 'marker1'
 	scene.add(markerRoot1)
-	var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
+	var markerControls = new ArMarkerControls(arToolkitContext, markerRoot1, {
 		type: 'pattern',
 		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-carousel.patt'
 	})
@@ -101,7 +101,7 @@ function initARContext() { // create atToolkitContext
 	// build markerControls
 	markerRoot2.name = 'marker2'
 	scene.add(markerRoot2)
-	var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
+	var markerControls = new ArMarkerControls(arToolkitContext, markerRoot2, {
 		type: 'pattern',
 		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-airport.patt',
 	})
