@@ -224,15 +224,15 @@ modelLoader2.load(
 		object.scale.set(0.01, 0.01, 0.01); 
         markerRoot2.add(object);
 
-		onRenderFcts.push(function (delta) {
-			if(object.position.z < 10){
+		/*onRenderFcts.push(function (delta) {
+			if(object.position.z < 2){
 				object.position.z += 0.1
 			}
 			else
 			{
 				object.position.z -= 0.1
 			}
-		})
+		})*/
     },
     (xhr) => {
         console.log('Airport Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
