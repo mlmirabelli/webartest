@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { FBXLoader } from 'fbxloader';
-import { ArToolkitSource, ArToolkitContext, ArMarkerControls }  from 'threex';
+import { ArToolkitSource, ArToolkitContext, ArMarkerControls, ArMultiMarkerControls }  from 'threex';
 
 ArToolkitContext.baseURL = '../'
 
@@ -14,43 +14,9 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.getElementById("objs3D").appendChild( renderer.domElement );
-/*renderer.gammaInput = true;
-renderer.gammaOutput = true;
-
-var aLight = new THREE.AmbientLight(0xffffff);
-var dLight1 = new THREE.DirectionalLight(0xffffff);
-var dLight2 = new THREE.DirectionalLight(0xffffff);
-var dLight3 = new THREE.DirectionalLight(0xffffff);
-
-var lightTarget = new THREE.Object3D();
-lightTarget.position.z -= 0.75;
-scene.add(lightTarget);
-dLight1.target = lightTarget;
-dLight2.target = lightTarget;
-dLight3.target = lightTarget;
-
-dLight1.position.y +=3 ;
-dLight1.position.z -=3 ; 
-
-dLight2.position.y +=3 ; 
-dLight2.position.x +=3 ; 
-dLight2.position.z -=3 ; 
-
-dLight3.position.y +=3 ; 
-dLight3.position.x -=3 ; 
-dLight3.position.z -=3 ; 
-
-dLight1.castShadow = false;
-dLight2.castShadow = false;
-dLight3.castShadow = false;
-
-const helper1 = new THREE.DirectionalLightHelper( dLight1, 5 );
-const helper2 = new THREE.DirectionalLightHelper( dLight2, 5 );
-const helper3 = new THREE.DirectionalLightHelper( dLight3, 5 );
-scene.add(dLight1, dLight2, dLight3, aLight, helper1, helper2, helper3);*/
 
 var onRenderFcts = [];
-var arToolkitContext, arMarkerControls;
+var arToolkitContext, arMarkerControls, arMarkerControls1;
 scene.visible = false
 
 var arToolkitSource = new ArToolkitSource({
@@ -112,7 +78,35 @@ function initARContext() { // create atToolkitContext
 		window.arToolkitContext = arToolkitContext;
 	})
 
-	// MARKER
+	;(function(){
+
+		//////////////////////////////////////////////////////////////////////////////
+		//		markerRoot1
+		//////////////////////////////////////////////////////////////////////////////
+	
+		// build markerControls
+		var markerRoot1 = new THREE.Group
+		markerRoot1.name = 'marker1'
+		var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
+			type: 'pattern',
+			patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-carousel.patt'
+		})
+	
+		//////////////////////////////////////////////////////////////////////////////
+		//		markerRoot2
+		//////////////////////////////////////////////////////////////////////////////
+	
+		// build markerControls
+		var markerRoot2 = new THREE.Group
+		markerRoot2.name = 'marker2'
+		scene.add(markerRoot2)
+		var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
+			type: 'pattern',
+			patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-airport.patt',
+		})
+	})
+
+	/*// MARKER 
 	arMarkerControls = new ArMarkerControls(arToolkitContext, camera, {
 		type: 'pattern',
 		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-carousel.patt',
@@ -124,7 +118,7 @@ function initARContext() { // create atToolkitContext
 	//scene.visible = false
 
 	console.log('ArMarkerControls', arMarkerControls);
-	window.arMarkerControls = arMarkerControls;
+	window.arMarkerControls = arMarkerControls;*/
 }
 
 function getSourceOrientation() {
@@ -162,11 +156,10 @@ onRenderFcts.push(function () {
 //////////////////////////////////////////////////////////////////////////////////
 //		add an object in the scene                                              //
 //////////////////////////////////////////////////////////////////////////////////
-const fbxLoader = new FBXLoader();
-//const textureLoader = new THREE.TextureLoader();
+const fbxLoader1 = new FBXLoader();
 var amusementParkObj;
 
-fbxLoader.load(
+fbxLoader1.load(
     'https://mlmirabelli.github.io/webartest/media/carousel.fbx', //3DPointer.fbx
     (object) => {
 		object.traverse(function (child) {
@@ -194,10 +187,11 @@ fbxLoader.load(
 		object.position.y += 1;
 		object.position.z += 0.5;
 		object.rotation.x -= Math.PI / 2;
-		//object.rotation.y -= Math.PI / 2;
 		object.scale.set(0.05, 0.05, 0.05); 
 		amusementParkObj = object;
-        scene.add(amusementParkObj);
+
+        markerRoot1.add(amusementParkObj);
+		scene.add(markerRoot1);
     },
     (xhr) => {
         console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
