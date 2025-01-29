@@ -11,7 +11,8 @@ scene.add(camera);
 
 const renderer = new THREE.WebGLRenderer({
 	antialias: true,
-	alpha: true
+	alpha: true,
+	logarithmicDepthBuffer: true 
 });
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.getElementById("objs3D").appendChild( renderer.domElement );
@@ -161,6 +162,10 @@ onRenderFcts.push(function () {
 //////////////////////////////////////////////////////////////////////////////////
 //		add an object in the scene                                              //
 //////////////////////////////////////////////////////////////////////////////////
+var normalMaterial = new THREE.MeshNormalMaterial({
+	side: THREE.DoubleSide,
+	flatShading: true
+});
 
 modelLoader1.load(
     'https://mlmirabelli.github.io/webartest/media/carousel.fbx',
@@ -234,7 +239,7 @@ modelLoader2.load(
 				movDirection *= -1;
 			}
 
-			object.position.z += 0.08*movDirection
+			object.position.z += 0.01*movDirection
 		})
     },
     (xhr) => {
