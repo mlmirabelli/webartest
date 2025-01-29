@@ -115,7 +115,7 @@ function initARContext() { // create atToolkitContext
 	// MARKER
 	arMarkerControls = new ArMarkerControls(arToolkitContext, camera, {
 		type: 'pattern',
-		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-binoculars.patt',
+		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-carousel.patt',
 		//patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji',
 		// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'
 		changeMatrixMode: 'cameraTransformMatrix'
@@ -194,7 +194,7 @@ fbxLoader.load(
 		object.position.y += 1;
 		object.rotation.x -= Math.PI / 2;
 		//object.rotation.y -= Math.PI / 2;
-		object.scale.set(0.005, 0.005, 0.005); 
+		object.scale.set(0.05, 0.05, 0.05); 
 		amusementParkObj = object;
         scene.add(amusementParkObj);
     },
@@ -207,7 +207,7 @@ fbxLoader.load(
 )
 
 onRenderFcts.push(function (delta) {
-	amusementParkObj.rotation.x += Math.PI * delta
+	amusementParkObj.rotation.z += Math.PI * delta
 })
 
 //////////////////////////////////////////////////////////////////////////////////
