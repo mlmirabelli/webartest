@@ -65,7 +65,7 @@ const modelLoader1 = new FBXLoader();
 var markerRoot1 = new THREE.Group;
 var amusementParkObj;
 
-const modelLoader2 = new FBXLoader();
+const modelLoader2 = new OBJLoader();
 var markerRoot2 = new THREE.Group;
 var airportObj;
 
@@ -210,7 +210,7 @@ modelLoader1.load(
 )
 
 modelLoader2.load(
-    'https://mlmirabelli.github.io/webartest/media/plane2.fbx',
+    'https://mlmirabelli.github.io/webartest/media/toyPlane.obj',
     (object) => {
 		object.traverse(function (child) {
 		if (child instanceof THREE.Mesh) {
