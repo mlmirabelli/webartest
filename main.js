@@ -18,8 +18,12 @@ renderer.gammaInput = true;
 renderer.gammaOutput = true;
 
 var aLight = new THREE.AmbientLight(0xffffff);
-var dLight = new THREE.DirectionalLight(0xffffff);
-dLight.position.y +=3 ; 
+var dLight1, dLight2, dLight3 = new THREE.DirectionalLight(0xffffff);
+dLight1.position.y +=3 ; 
+dLight2.position.y +=3 ; 
+dLight3.position.y +=3 ; 
+dLight2.rotation.z -= Math.PI / 2;
+dLight.castShadow = false;
 //pLight.position.copy(camera.position);
 const helper = new THREE.DirectionalLightHelper( dLight, 5 );
 scene.add(dLight, aLight, helper);
