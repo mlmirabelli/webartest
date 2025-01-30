@@ -183,9 +183,7 @@ modelLoader1.load(
                 } );*/
 				//child.material.map = texture;
 				//child.material = planeMaterial;
-				child.material = new THREE.MeshNormalMaterial({
-					side: THREE.DoubleSide
-				});
+				child.material = normalMaterial;
 				child.material.needsupdate = true;
 				//console.log(texture)
 				// render(); // only if there is no render loop
@@ -217,15 +215,13 @@ modelLoader2.load(
     (object) => {
 		object.traverse(function (child) {
 		if (child instanceof THREE.Mesh) {
-				child.material = new THREE.MeshNormalMaterial({
-					side: THREE.DoubleSide
-				});
+				child.material = normalMaterial;
 				child.material.needsupdate = true;
 				}
 			});
 		object.position.y += 1;
 		//object.position.z += 0.5;
-		object.rotation.y -= Math.PI / 4 * 3;
+		object.rotation.z -= Math.PI / 4 * 3;
 		object.rotation.x -= Math.PI / 2;
 		object.scale.set(0.00125, 0.00125, 0.00125); 
         markerRoot2.add(object);
