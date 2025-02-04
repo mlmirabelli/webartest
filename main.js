@@ -222,7 +222,7 @@ modelLoader2.load(
 		object.position.y += 1;
 		object.position.z += 1;
 		object.rotation.y -= Math.PI / 4;
-		object.rotation.x -= Math.PI / 2;
+		//object.rotation.x -= Math.PI / 2;
 		object.scale.set(0.00125, 0.00125, 0.00125); 
         markerRoot2.add(object);
 
