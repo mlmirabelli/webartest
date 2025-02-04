@@ -68,9 +68,8 @@ var markerRoot1 = new THREE.Group;
 const modelLoader2 = new FBXLoader();
 var markerRoot2 = new THREE.Group;
 
-/*const modelLoader3 = new OBJLoader();
+const modelLoader3 = new OBJLoader();
 var markerRoot3 = new THREE.Group;
-var volcanoObj;*/
 
 function initARContext() { // create atToolkitContext
 	arToolkitContext = new ArToolkitContext({
@@ -104,12 +103,22 @@ function initARContext() { // create atToolkitContext
 	//		markerRoot2
 	//////////////////////////////////////////////////////////////////////////////
 
-	// build markerControls
 	markerRoot2.name = 'marker2'
 	scene.add(markerRoot2)
 	var markerControls = new ArMarkerControls(arToolkitContext, markerRoot2, {
 		type: 'pattern',
 		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-airport.patt',
+	})
+
+	//////////////////////////////////////////////////////////////////////////////
+	//		markerRoot3
+	//////////////////////////////////////////////////////////////////////////////
+
+	markerRoot3.name = 'marker3'
+	scene.add(markerRoot3)
+	var markerControls = new ArMarkerControls(arToolkitContext, markerRoot3, {
+		type: 'pattern',
+		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-volcano.patt',
 	})
 
 	/*// MARKER 
@@ -246,6 +255,29 @@ modelLoader2.load(
     }
 )
 
+modelLoader3.load(
+    'https://mlmirabelli.github.io/webartest/media/volcano.obj',
+    (object) => {
+		object.traverse(function (child) {
+		if (child instanceof THREE.Mesh) {
+				child.material = normalMaterial;
+				child.material.needsupdate = true;
+				}
+			});
+		object.position.y += 1;
+		//object.position.z -= 0.25;
+		//object.rotation.y -= Math.PI/ 2;
+		//object.rotation.x -= Math.PI / 2;
+		object.scale.set(1, 1, 1); 
+        markerRoot3.add(object);
+    },
+    (xhr) => {
+        console.log('Volcano Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
+    },
+    (error) => {
+        console.log(error)
+    }
+)
 
 //////////////////////////////////////////////////////////////////////////////////
 //		render the whole thing on the page                                      //
