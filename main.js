@@ -268,7 +268,7 @@ modelLoader3.load(
 		//object.position.z -= 0.25;
 		object.rotation.y -= Math.PI/ 2;
 		object.rotation.x -= Math.PI;
-		object.rotation.z -= Math.PI / 2;
+		object.rotation.z -= Math.PI;
 		object.scale.set(0.65, 0.65, 0.65); 
         markerRoot3.add(object);
     },
@@ -280,7 +280,7 @@ modelLoader3.load(
     }
 )
 
-const planeGeo = new THREE.PlaneGeometry( 1, 1 );
+const planeGeo = new THREE.PlaneGeometry( 100, 100);
 const plane = new THREE.Mesh( planeGeo, normalMaterial );
 scene.add( plane );
 
