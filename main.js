@@ -266,7 +266,7 @@ modelLoader3.load(
 			});
 		object.position.y += 1;
 		//object.position.z -= 0.25;
-		//object.rotation.y -= Math.PI/ 2;
+		object.rotation.y += Math.PI;
 		//object.rotation.x -= Math.PI / 2;
 		//object.rotation.z += Math.PI / 2;
 		object.scale.set(0.65, 0.65, 0.65); 
@@ -276,6 +276,7 @@ modelLoader3.load(
 		const plane = new THREE.Mesh( planeGeo, normalMaterial );
 		//plane.rotation.x += Math.PI / 2;
 		plane.position.y += 0.65;
+		plane.position.z += 0.65;
 		markerRoot3.add( plane );
     },
     (xhr) => {
