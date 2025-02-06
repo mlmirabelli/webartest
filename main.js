@@ -267,9 +267,9 @@ modelLoader3.load(
 		object.position.y += 1;
 		//object.position.z -= 0.25;
 		object.rotation.y -= Math.PI/ 2;
-		//object.rotation.x -= Math.PI / 2;
+		object.rotation.x -= Math.PI;
 		object.rotation.z -= Math.PI / 2;
-		object.scale.set(0.5, 0.5, 0.5); 
+		object.scale.set(0.65, 0.65, 0.65); 
         markerRoot3.add(object);
     },
     (xhr) => {
