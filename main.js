@@ -310,4 +310,3 @@ requestAnimationFrame(function animate(nowMsec) {
 		onRenderFct(deltaMsec / 1000, nowMsec / 1000)
 	})
 })
-+
