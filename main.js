@@ -244,7 +244,7 @@ modelLoader2.load(
 		var movDisplacement = 0.1;
 
 		onRenderFcts.push(function (delta) {
-			object.rotation.z += 0.01
+			object.rotation.x += 0.01
 			if(object.position.z >= (ogVerticalPosition + movDisplacement) || object.position.z <= (ogVerticalPosition - movDisplacement)){
 				movDirection *= -1;
 			}
