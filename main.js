@@ -306,7 +306,7 @@ modelLoader30.load(
 
 		maxRotation = object.rotation.y += Math.PI / 4;
 		minRotation = object.rotation.y -= Math.PI / 4;
-		rotationChange = 0.01;
+		rotationChange = 0.001;
 		rotationFactor = 1;
 
 		onRenderFcts.push(function (delta) {
