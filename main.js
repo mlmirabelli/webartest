@@ -292,12 +292,12 @@ modelLoader3.load(
 modelLoader30.load(
     'https://mlmirabelli.github.io/webartest/media/Z.stl',
     (object) => {
-		object.traverse(function (child) {
+		/*object.traverse(function (child) {
 		if (child instanceof THREE.Mesh) {
 				child.material = normalMaterial;
 				child.material.needsupdate = true;
 				}
-			});
+			});*/
 		object.position.y += 1;
 		object.position.z -= 3;
 		object.scale.set(0.65, 0.65, 0.65); 
