@@ -365,7 +365,7 @@ modelLoader32.load(
 		const scaleCounter = 1;
 
 		onRenderFcts.push(function (delta) {
-			if(object.position.x < finalPosition.x){
+			if(scaleCounter < 10){
 				//object.position.lerp(finalPosition, 0.5);
 				object.scale.set(ogScale + (scaleCounter * scaleFactor), ogScale + (scaleCounter * scaleFactor), ogScale + (scaleCounter * scaleFactor));
 				scaleCounter++;
