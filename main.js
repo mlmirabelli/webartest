@@ -297,7 +297,7 @@ modelLoader30.load(
 				child.material.needsupdate = true;
 				}
 			});
-		object.position.y += 1;
+		//object.position.y += 1;
 		//object.position.z -= 1;
 		object.scale.set(1, 1, 1); 
         markerRoot3.add(object);
