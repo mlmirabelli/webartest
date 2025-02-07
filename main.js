@@ -297,15 +297,25 @@ modelLoader30.load(
 				child.material.needsupdate = true;
 				}
 			});
-		object.rotation.y += Math.PI / 4;
+		//object.rotation.y += Math.PI / 4;
 		object.position.y += 1;
 		object.position.z -= 0.5;
 		object.position.x += 0.5;
 		object.scale.set(0.0025, 0.0025, 0.0025); 
         markerRoot3.add(object);
 
+		maxRotation = object.rotation.y += Math.PI / 4;
+		minRotation = object.rotation.y -= Math.PI / 4;
+		rotationChange = 0.01;
+		rotationFactor = 1;
+
 		onRenderFcts.push(function (delta) {
-			object.rotation.y += 0.01
+			//object.rotation.y += 0.01
+			if(object.rotation.y >= maxRotation || object.rotation.y <= minRotation){
+				rotationFactor *= -1;
+			}
+
+			object.rotation.y += rotationChange*rotationFactor
 		})
     },
     (xhr) => {
