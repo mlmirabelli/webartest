@@ -313,7 +313,7 @@ modelLoader30.load(
 				rotDirection *= -1;
 			}*/
 
-			object.rotation.y += 0.001//*rotDirection
+			object.rotation.y += 0.01//*rotDirection
 		})
     },
     (xhr) => {
