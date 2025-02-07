@@ -304,14 +304,13 @@ modelLoader30.load(
 		object.scale.set(0.0025, 0.0025, 0.0025); 
         markerRoot3.add(object);
 
-		maxRotation = object.rotation.y += Math.PI / 4;
-		minRotation = object.rotation.y -= Math.PI / 4;
-		rotationFactor = 1;
+		const maxRotation = object.rotation.y += Math.PI / 4;
+		const minRotation = object.rotation.y -= Math.PI / 4;
+		const rotationFactor = 1;
 
 		onRenderFcts.push(function (delta) {
 			//object.rotation.y += 0.01
 			if(object.rotation.y >= maxRotation || object.rotation.y <= minRotation){
-				console.log("CHANGING ROTATION FACTOR");
 				rotationFactor *= -1;
 			}
 
