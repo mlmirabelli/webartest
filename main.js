@@ -358,19 +358,23 @@ modelLoader32.load(
 		object.scale.set(0.0015, 0.0015, 0.0015); 
         markerRoot3.add(object);
 
-		const ogPosition = object.position;
+		const ogPosition = new THREE.Vector3(object.position.x, object.position.y, object.position.z);
 		const finalPosition = new THREE.Vector3(object.position.x + 0.5, object.position.y, object.position.z - 0.5);
 		const ogScale = 0.0015;
+		const scaleFactor = 0.0005;
+		const scaleCounter = 1;
 
 		onRenderFcts.push(function (delta) {
 			if(object.position.x < finalPosition.x){
 				//object.position.lerp(finalPosition, 0.5);
-				object.scale += 0.0001;
+				object.scale.set(ogScale + (scaleCounter * scaleFactor), ogScale + (scaleCounter * scaleFactor), ogScale + (scaleCounter * scaleFactor));
+				scaleCounter++;
 			}
 			else
 			{
 				object.position = ogPosition;
-				object.scale.set(ogScale);
+				object.scale.set(ogScale, ogScale, ogScale);
+				scaleCounter = 1;
 			}
 			//object.rotation.y += 0.02
 		})
