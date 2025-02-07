@@ -364,7 +364,7 @@ modelLoader32.load(
 
 		onRenderFcts.push(function (delta) {
 			if(object.position.x < finalPosition.x){
-				object.position.lerp(finalPosition, 0.5);
+				//object.position.lerp(finalPosition, 0.5);
 				object.scale += 0.0001;
 			}
 			else
