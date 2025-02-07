@@ -299,12 +299,35 @@ modelLoader30.load(
 			});
 		object.position.y += 1;
 		object.position.z -= 0.5;
-		object.position.x -= 0.5;
+		object.position.x += 0.5;
 		object.scale.set(0.0025, 0.0025, 0.0025); 
         markerRoot3.add(object);
     },
     (xhr) => {
         console.log('z0 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
+    },
+    (error) => {
+        console.log(error)
+    }
+)
+
+modelLoader31.load(
+    'https://mlmirabelli.github.io/webartest/media/z.fbx',
+    (object) => {
+		object.traverse(function (child) {
+		if (child instanceof THREE.Mesh) {
+				child.material = normalMaterial;
+				child.material.needsupdate = true;
+				}
+			});
+		object.position.y += 1;
+		object.position.z -= 0.4;
+		object.position.x += 0.4;
+		object.scale.set(0.0015, 0.0015, 0.0015); 
+        markerRoot3.add(object);
+    },
+    (xhr) => {
+        console.log('z1 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
     },
     (error) => {
         console.log(error)
