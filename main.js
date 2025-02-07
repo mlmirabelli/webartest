@@ -301,6 +301,12 @@ modelLoader30.load(
 		//object.position.z -= 1;
 		object.scale.set(1, 1, 1); 
         markerRoot3.add(object);
+
+		const planeGeo = new THREE.PlaneGeometry( 1.5, 1.15 );
+		const plane = new THREE.Mesh( planeGeo, normalMaterial );
+		plane.position.y += 1;
+		plane.position.z += 0.2;
+		markerRoot3.add( plane );
     },
     (xhr) => {
         console.log('z0 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
