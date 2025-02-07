@@ -259,7 +259,7 @@ modelLoader2.load(
     }
 )
 
-modelLoader3.load(
+/*modelLoader3.load(
     'https://mlmirabelli.github.io/webartest/media/volcano.obj',
     (object) => {
 		object.traverse(function (child) {
@@ -286,7 +286,7 @@ modelLoader3.load(
     (error) => {
         console.log(error)
     }
-)
+)*/
 
 modelLoader30.load(
     'https://mlmirabelli.github.io/webartest/media/z.fbx',
