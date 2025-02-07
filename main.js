@@ -358,8 +358,21 @@ modelLoader32.load(
 		object.scale.set(0.0015, 0.0015, 0.0015); 
         markerRoot3.add(object);
 
+		const ogPosition = object.position;
+		const finalPosition = new THREE.Vector3(object.position.x + 0.5, object.position.y, object.position.z - 0.5);
+		const ogScale = 0.0015;
+
 		onRenderFcts.push(function (delta) {
-			object.rotation.y += 0.02
+			if(object.position.x < finalPosition.x){
+				object.position.lerp(finalPosition, 0.5);
+				object.scale += 0.0001;
+			}
+			else
+			{
+				object.position = ogPosition;
+				object.scale.set(ogScale);
+			}
+			//object.rotation.y += 0.02
 		})
     },
     (xhr) => {
