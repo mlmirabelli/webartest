@@ -361,7 +361,7 @@ modelLoader32.load(
 		const ogPosition = new THREE.Vector3(object.position.x, object.position.y, object.position.z);
 		const finalPosition = new THREE.Vector3(object.position.x + 0.5, object.position.y, object.position.z - 0.5);
 		const ogScale = 0.0015;
-		const scaleFactor = 0.0005;
+		const scaleFactor = 0.05;
 		const scaleCounter = 1;
 
 		onRenderFcts.push(function (delta) {
