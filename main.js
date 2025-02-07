@@ -259,7 +259,7 @@ modelLoader2.load(
     }
 )
 
-/*modelLoader3.load(
+modelLoader3.load(
     'https://mlmirabelli.github.io/webartest/media/volcano.obj',
     (object) => {
 		object.traverse(function (child) {
@@ -286,7 +286,7 @@ modelLoader2.load(
     (error) => {
         console.log(error)
     }
-)*/
+)
 
 modelLoader30.load(
     'https://mlmirabelli.github.io/webartest/media/z.fbx',
@@ -297,16 +297,10 @@ modelLoader30.load(
 				child.material.needsupdate = true;
 				}
 			});
-		//object.position.y += 1;
-		//object.position.z -= 1;
+		object.position.y += 1;
+		object.position.z -= 1;
 		object.scale.set(0.005, 0.005, 0.005); 
         markerRoot3.add(object);
-
-		const planeGeo = new THREE.PlaneGeometry( 1.5, 1.15 );
-		const plane = new THREE.Mesh( planeGeo, normalMaterial );
-		plane.position.y += 1;
-		plane.position.z += 0.2;
-		markerRoot3.add( plane );
     },
     (xhr) => {
         console.log('z0 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
