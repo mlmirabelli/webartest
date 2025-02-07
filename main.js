@@ -354,7 +354,7 @@ modelLoader32.load(
 		object.rotation.x += Math.PI / 8;
 		object.position.y += 1;
 		object.position.z -= 0.3;
-		object.position.x += 0.2;
+		object.position.x += 0.1;
 		object.scale.set(0.0015, 0.0015, 0.0015); 
         markerRoot3.add(object);
 
