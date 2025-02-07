@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import { FBXLoader } from 'fbxloader';
 import { OBJLoader } from 'objloader';
-import { STLLoader } from 'stlloader';
 import { ArToolkitSource, ArToolkitContext, ArMarkerControls }  from 'threex';
 
 ArToolkitContext.baseURL = '../'
@@ -70,9 +69,9 @@ const modelLoader2 = new FBXLoader();
 var markerRoot2 = new THREE.Group;
 
 const modelLoader3 = new OBJLoader();
-const modelLoader30 = new STLLoader();
-const modelLoader31 = new STLLoader();
-const modelLoader32 = new STLLoader();
+const modelLoader30 = new FBXLoader();
+const modelLoader31 = new FBXLoader();
+const modelLoader32 = new FBXLoader();
 var markerRoot3 = new THREE.Group;
 
 
@@ -290,16 +289,16 @@ modelLoader3.load(
 )
 
 modelLoader30.load(
-    'https://mlmirabelli.github.io/webartest/media/Z.stl',
+    'https://mlmirabelli.github.io/webartest/media/z.fbx',
     (object) => {
-		/*object.traverse(function (child) {
+		object.traverse(function (child) {
 		if (child instanceof THREE.Mesh) {
 				child.material = normalMaterial;
 				child.material.needsupdate = true;
 				}
-			});*/
+			});
 		object.position.y += 1;
-		object.position.z -= 3;
+		object.position.z -= 1;
 		object.scale.set(0.65, 0.65, 0.65); 
         markerRoot3.add(object);
     },
