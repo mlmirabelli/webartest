@@ -299,7 +299,7 @@ modelLoader30.load(
 			});
 		//object.position.y += 1;
 		//object.position.z -= 1;
-		object.scale.set(1, 1, 1); 
+		object.scale.set(0.1, 0.1, 0.1); 
         markerRoot3.add(object);
 
 		const planeGeo = new THREE.PlaneGeometry( 1.5, 1.15 );
