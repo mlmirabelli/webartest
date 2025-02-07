@@ -298,8 +298,9 @@ modelLoader30.load(
 				}
 			});
 		object.position.y += 1;
-		object.position.z -= 1;
-		object.scale.set(0.005, 0.005, 0.005); 
+		object.position.z -= 0.5;
+		object.position.x -= 0.5;
+		object.scale.set(0.0025, 0.0025, 0.0025); 
         markerRoot3.add(object);
     },
     (xhr) => {
