@@ -304,16 +304,8 @@ modelLoader30.load(
 		object.scale.set(0.0025, 0.0025, 0.0025); 
         markerRoot3.add(object);
 
-		var ogYRotation = object.rotation.y;
-		var rotDirection = 1;
-		var rotDisplacement = Math.PI / 2;
-
 		onRenderFcts.push(function (delta) {
-			/*if(object.rotation.y >= (ogYRotation + rotDisplacement) || object.rotation.y <= ogYRotation){
-				rotDirection *= -1;
-			}*/
-
-			object.rotation.y += 0.01//*rotDirection
+			object.rotation.y += 0.01
 		})
     },
     (xhr) => {
@@ -336,8 +328,12 @@ modelLoader31.load(
 		object.position.y += 1;
 		object.position.z -= 0.4;
 		object.position.x += 0.35;
-		object.scale.set(0.0015, 0.0015, 0.0015); 
+		object.scale.set(0.002, 0.002, 0.002); 
         markerRoot3.add(object);
+
+		onRenderFcts.push(function (delta) {
+			object.rotation.y -= 0.015
+		})
     },
     (xhr) => {
         console.log('z1 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
@@ -355,11 +351,16 @@ modelLoader32.load(
 				child.material.needsupdate = true;
 				}
 			});
+		object.rotation.y += Math.PI / 8;
 		object.position.y += 1;
 		object.position.z -= 0.3;
 		object.position.x += 0.2;
-		object.scale.set(0.0005, 0.0005, 0.0005); 
+		object.scale.set(0.0015, 0.0015, 0.0015); 
         markerRoot3.add(object);
+
+		onRenderFcts.push(function (delta) {
+			object.rotation.y += 0.02
+		})
     },
     (xhr) => {
         console.log('z2 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
