@@ -299,7 +299,7 @@ modelLoader30.load(
 			});
 		object.position.y += 1;
 		object.position.z -= 1;
-		object.scale.set(0.65, 0.65, 0.65); 
+		object.scale.set(3, 3, 3); 
         markerRoot3.add(object);
     },
     (xhr) => {
