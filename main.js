@@ -297,7 +297,7 @@ modelLoader30.load(
 				child.material.needsupdate = true;
 				}
 			});
-		object.rotation.y -= Math.PI / 4;
+		object.rotation.y += Math.PI / 4;
 		object.position.y += 1;
 		object.position.z -= 0.5;
 		object.position.x += 0.5;
@@ -309,11 +309,11 @@ modelLoader30.load(
 		var rotDisplacement = Math.PI / 2;
 
 		onRenderFcts.push(function (delta) {
-			if(object.rotation.y >= (ogYRotation + rotDisplacement) || object.rotation.y <= (ogYRotation - rotDisplacement)){
-				movDirection *= -1;
+			if(object.rotation.y >= (ogYRotation + rotDisplacement) || object.rotation.y <= ogYRotation){
+				rotDirection *= -1;
 			}
 
-			object.rotation.y += 0.01*rotDirection
+			object.rotation.y += 0.001*rotDirection
 		})
     },
     (xhr) => {
