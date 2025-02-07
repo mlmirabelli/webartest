@@ -297,7 +297,7 @@ modelLoader30.load(
 				child.material.needsupdate = true;
 				}
 			});
-		object.rotation.y += Math.PI / 4;
+		object.rotation.x += Math.PI / 4;
 		object.position.y += 1;
 		object.position.z -= 0.5;
 		object.position.x += 0.5;
@@ -305,7 +305,7 @@ modelLoader30.load(
         markerRoot3.add(object);
 
 		onRenderFcts.push(function (delta) {
-			object.rotation.y += 0.01
+			object.rotation.x += 0.01
 		})
     },
     (xhr) => {
@@ -332,7 +332,7 @@ modelLoader31.load(
         markerRoot3.add(object);
 
 		onRenderFcts.push(function (delta) {
-			object.rotation.y -= 0.015
+			object.rotation.x -= 0.015
 		})
     },
     (xhr) => {
@@ -351,7 +351,7 @@ modelLoader32.load(
 				child.material.needsupdate = true;
 				}
 			});
-		object.rotation.y += Math.PI / 8;
+		object.rotation.x += Math.PI / 8;
 		object.position.y += 1;
 		object.position.z -= 0.3;
 		object.position.x += 0.2;
@@ -359,7 +359,7 @@ modelLoader32.load(
         markerRoot3.add(object);
 
 		onRenderFcts.push(function (delta) {
-			object.rotation.y += 0.02
+			object.rotation.x += 0.02
 		})
     },
     (xhr) => {
