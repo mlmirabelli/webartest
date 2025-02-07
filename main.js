@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { FBXLoader } from 'fbxloader';
 import { OBJLoader } from 'objloader';
+import { STLLoader } from 'stlloader';
 import { ArToolkitSource, ArToolkitContext, ArMarkerControls }  from 'threex';
 
 ArToolkitContext.baseURL = '../'
@@ -69,7 +70,11 @@ const modelLoader2 = new FBXLoader();
 var markerRoot2 = new THREE.Group;
 
 const modelLoader3 = new OBJLoader();
+const modelLoader30 = new STLLoader();
+const modelLoader31 = new STLLoader();
+const modelLoader32 = new STLLoader();
 var markerRoot3 = new THREE.Group;
+
 
 function initARContext() { // create atToolkitContext
 	arToolkitContext = new ArToolkitContext({
@@ -230,8 +235,8 @@ modelLoader2.load(
 			});
 		object.position.y += 1;
 		object.position.z -= 0.25;
-		object.rotation.y -= Math.PI/ 2;
-		object.rotation.x -= Math.PI / 2;
+		//object.rotation.y -= Math.PI/ 2;
+		//object.rotation.x -= Math.PI / 2;
 		object.scale.set(0.00125, 0.00125, 0.00125); 
         markerRoot2.add(object);
 
@@ -265,22 +270,41 @@ modelLoader3.load(
 				}
 			});
 		object.position.y += 1;
-		//object.position.z -= 0.25;
 		object.rotation.y += Math.PI;
 		object.rotation.x -= Math.PI / 2;
-		//object.rotation.z += Math.PI / 2;
 		object.scale.set(0.65, 0.65, 0.65); 
         markerRoot3.add(object);
 
-		const planeGeo = new THREE.PlaneGeometry( 1.5, 1 );
+		const planeGeo = new THREE.PlaneGeometry( 1.5, 1.15 );
 		const plane = new THREE.Mesh( planeGeo, normalMaterial );
-		//plane.rotation.x += Math.PI / 2;
 		plane.position.y += 1;
 		plane.position.z += 0.2;
 		markerRoot3.add( plane );
     },
     (xhr) => {
         console.log('Volcano Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
+    },
+    (error) => {
+        console.log(error)
+    }
+)
+
+modelLoader30.load(
+    'https://mlmirabelli.github.io/webartest/media/Z.stl',
+    (object) => {
+		object.traverse(function (child) {
+		if (child instanceof THREE.Mesh) {
+				child.material = normalMaterial;
+				child.material.needsupdate = true;
+				}
+			});
+		object.position.y += 1;
+		object.position.z -= 3;
+		object.scale.set(0.65, 0.65, 0.65); 
+        markerRoot3.add(object);
+    },
+    (xhr) => {
+        console.log('z0 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
     },
     (error) => {
         console.log(error)
