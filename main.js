@@ -315,7 +315,7 @@ modelLoader30.load(
 				rotationFactor *= -1;
 			}*/
 
-			object.rotation.y += rotationChange*rotationFactor;
+			object.rotation.y += rotationChange;//*rotationFactor;
 		})
     },
     (xhr) => {
