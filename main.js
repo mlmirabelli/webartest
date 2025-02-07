@@ -235,7 +235,7 @@ modelLoader2.load(
 		object.position.y += 1;
 		object.position.z -= 0.25;
 		object.rotation.y -= Math.PI/ 2;
-		object.rotation.x -= Math.PI / 4;
+		object.rotation.x -= Math.PI / 2;
 		object.scale.set(0.00125, 0.00125, 0.00125); 
         markerRoot2.add(object);
 
@@ -244,6 +244,7 @@ modelLoader2.load(
 		var movDisplacement = 0.1;
 
 		onRenderFcts.push(function (delta) {
+			object.rotation.y += 0.01
 			if(object.position.z >= (ogVerticalPosition + movDisplacement) || object.position.z <= (ogVerticalPosition - movDisplacement)){
 				movDirection *= -1;
 			}
