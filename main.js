@@ -309,11 +309,11 @@ modelLoader30.load(
 		var rotDisplacement = Math.PI / 2;
 
 		onRenderFcts.push(function (delta) {
-			if(object.rotation.y >= (ogYRotation + rotDisplacement) || object.rotation.y <= ogYRotation){
+			/*if(object.rotation.y >= (ogYRotation + rotDisplacement) || object.rotation.y <= ogYRotation){
 				rotDirection *= -1;
-			}
+			}*/
 
-			object.rotation.y += 0.001*rotDirection
+			object.rotation.y += 0.001//*rotDirection
 		})
     },
     (xhr) => {
