@@ -234,7 +234,7 @@ modelLoader2.load(
 			});
 		object.position.y += 1;
 		object.position.z -= 0.25;
-		object.rotation.y -= Math.PI/ 4;
+		object.rotation.z -= Math.PI/ 4;
 		object.rotation.y -= Math.PI/ 2;
 		object.rotation.x -= Math.PI / 2;
 		object.scale.set(0.00125, 0.00125, 0.00125); 
