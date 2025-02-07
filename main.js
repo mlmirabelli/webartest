@@ -297,11 +297,24 @@ modelLoader30.load(
 				child.material.needsupdate = true;
 				}
 			});
+		object.rotation.y -= Math.PI / 4;
 		object.position.y += 1;
 		object.position.z -= 0.5;
 		object.position.x += 0.5;
 		object.scale.set(0.0025, 0.0025, 0.0025); 
         markerRoot3.add(object);
+
+		var ogYRotation = object.rotation.y;
+		var rotDirection = 1;
+		var rotDisplacement = Math.PI / 2;
+
+		onRenderFcts.push(function (delta) {
+			if(object.rotation.y >= (ogYRotation + rotDisplacement) || object.rotation.y <= (ogYRotation - rotDisplacement)){
+				movDirection *= -1;
+			}
+
+			object.rotation.y += 0.01*rotDirection
+		})
     },
     (xhr) => {
         console.log('z0 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
@@ -322,12 +335,34 @@ modelLoader31.load(
 			});
 		object.position.y += 1;
 		object.position.z -= 0.4;
-		object.position.x += 0.4;
+		object.position.x += 0.35;
 		object.scale.set(0.0015, 0.0015, 0.0015); 
         markerRoot3.add(object);
     },
     (xhr) => {
         console.log('z1 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
+    },
+    (error) => {
+        console.log(error)
+    }
+)
+modelLoader32.load(
+    'https://mlmirabelli.github.io/webartest/media/z.fbx',
+    (object) => {
+		object.traverse(function (child) {
+		if (child instanceof THREE.Mesh) {
+				child.material = normalMaterial;
+				child.material.needsupdate = true;
+				}
+			});
+		object.position.y += 1;
+		object.position.z -= 0.3;
+		object.position.x += 0.2;
+		object.scale.set(0.0005, 0.0005, 0.0005); 
+        markerRoot3.add(object);
+    },
+    (xhr) => {
+        console.log('z2 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
     },
     (error) => {
         console.log(error)
