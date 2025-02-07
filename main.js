@@ -325,9 +325,9 @@ modelLoader31.load(
 				child.material.needsupdate = true;
 				}
 			});
-		object.position.y += 1;
+		object.position.y += 0.85;
 		object.position.z -= 0.4;
-		object.position.x += 0.35;
+		object.position.x += 0.3;
 		object.scale.set(0.002, 0.002, 0.002); 
         markerRoot3.add(object);
 
