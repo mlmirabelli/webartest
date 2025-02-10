@@ -316,10 +316,10 @@ modelLoader30.load(
 
 		onRenderFcts.push(function (delta) {
 			//console.log("object current scale = " + object.scale.x);
-			if(object.position.x + 0.01 < finalPosition.x)
+			if(object.position.x + 0.001 < finalPosition.x)
 			{
-				object.position.lerp(finalPosition, 0.01);
-				object.scale.lerp(finalScale, 0.01);
+				object.position.lerp(finalPosition, 0.01 * delta);
+				object.scale.lerp(finalScale, 0.01 * delta);
 			}
 			else
 			{
@@ -375,10 +375,10 @@ modelLoader31.load(
 
 		onRenderFcts.push(function (delta) {
 			//console.log("object current scale = " + object.scale.x);
-			if(object.position.x + 0.01 < finalPosition.x)
+			if(object.position.x + 0.001 < finalPosition.x)
 			{
-				object.position.lerp(finalPosition, 0.01);
-				object.scale.lerp(finalScale, 0.01);
+				object.position.lerp(finalPosition, 0.01 * delta);
+				object.scale.lerp(finalScale, 0.01 * delta);
 			}
 			else
 			{
@@ -426,10 +426,10 @@ modelLoader32.load(
 
 		onRenderFcts.push(function (delta) {
 			//console.log("object current scale = " + object.scale.x);
-			if(object.position.x + 0.05 < finalPosition.x)
+			if(object.position.x + 0.001 < finalPosition.x)
 			{
-				object.position.lerp(finalPosition, 0.01);
-				object.scale.lerp(finalScale, 0.01);
+				object.position.lerp(finalPosition, 0.01 * delta);
+				object.scale.lerp(finalScale, 0.01 * delta);
 			}
 			else
 			{
