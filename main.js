@@ -309,8 +309,8 @@ modelLoader30.load(
 		object.scale.set(0.0025, 0.0025, 0.0025); 
         markerRoot3.add(object);
 
-		const ogPosition = new THREE.Vector3(ogPositionX + 0.5, ogPositionY, ogPositionZ - 0.5);
-		const finalPosition = new THREE.Vector3(ogPositionX + 0.8, ogPositionY, ogPositionZ - 0.7);
+		const ogPosition = new THREE.Vector3(ogPositionX + 0.5, ogPositionY + 1, ogPositionZ - 0.5);
+		const finalPosition = new THREE.Vector3(ogPositionX + 0.8, ogPositionY + 1, ogPositionZ - 0.7);
 		const ogScale = 0.0015;
 		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
 
@@ -318,8 +318,8 @@ modelLoader30.load(
 			//console.log("object current scale = " + object.scale.x);
 			if(object.position.x + 0.01 < finalPosition.x)
 			{
-				object.position.lerp(finalPosition, 0.0075);
-				object.scale.lerp(finalScale, 0.0075);
+				object.position.lerp(finalPosition, 0.01);
+				object.scale.lerp(finalScale, 0.01);
 			}
 			else
 			{
@@ -368,8 +368,8 @@ modelLoader31.load(
 		object.scale.set(0.002, 0.002, 0.002); 
         markerRoot3.add(object);
 
-		const ogPosition = new THREE.Vector3(ogPositionX + 0.5, ogPositionY, ogPositionZ - 0.5);
-		const finalPosition = new THREE.Vector3(ogPositionX + 0.8, ogPositionY, ogPositionZ - 0.7);
+		const ogPosition = new THREE.Vector3(ogPositionX + 0.5, ogPositionY + 1, ogPositionZ - 0.5);
+		const finalPosition = new THREE.Vector3(ogPositionX + 0.8, ogPositionY + 1, ogPositionZ - 0.7);
 		const ogScale = 0.0015;
 		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
 
@@ -377,8 +377,8 @@ modelLoader31.load(
 			//console.log("object current scale = " + object.scale.x);
 			if(object.position.x + 0.01 < finalPosition.x)
 			{
-				object.position.lerp(finalPosition, 0.0075);
-				object.scale.lerp(finalScale, 0.0075);
+				object.position.lerp(finalPosition, 0.01);
+				object.scale.lerp(finalScale, 0.01);
 			}
 			else
 			{
@@ -419,8 +419,8 @@ modelLoader32.load(
 		object.scale.set(0.0015, 0.0015, 0.0015); 
         markerRoot3.add(object);
 
-		const ogPosition = new THREE.Vector3(ogPositionX + 0.5, ogPositionY, ogPositionZ - 0.5);
-		const finalPosition = new THREE.Vector3(ogPositionX + 0.8, ogPositionY, ogPositionZ - 0.7);
+		const ogPosition = new THREE.Vector3(ogPositionX + 0.5, ogPositionY + 1, ogPositionZ - 0.5);
+		const finalPosition = new THREE.Vector3(ogPositionX + 0.8, ogPositionY + 1, ogPositionZ - 0.7);
 		const ogScale = 0.0015;
 		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
 
@@ -428,8 +428,8 @@ modelLoader32.load(
 			//console.log("object current scale = " + object.scale.x);
 			if(object.position.x + 0.01 < finalPosition.x)
 			{
-				object.position.lerp(finalPosition, 0.0075);
-				object.scale.lerp(finalScale, 0.0075);
+				object.position.lerp(finalPosition, 0.01);
+				object.scale.lerp(finalScale, 0.01);
 			}
 			else
 			{
