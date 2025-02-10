@@ -304,8 +304,8 @@ modelLoader30.load(
 
 		object.rotation.y += Math.PI / 8;
 		object.position.y += 1;
-		object.position.z -= 0.5;
-		object.position.x += 0.5;
+		object.position.z -= 0.2;
+		object.position.x += 0.2;
 		object.scale.set(0.0025, 0.0025, 0.0025); 
         markerRoot3.add(object);
 
@@ -368,7 +368,7 @@ modelLoader31.load(
 		const ogPositionZ = object.position.z;
 
 		object.rotation.y += Math.PI / 8;
-		object.position.z -= 0.4;
+		object.position.z -= 0.35;
 		object.position.x += 0.35;
 		object.scale.set(0.002, 0.002, 0.002); 
         markerRoot3.add(object);
@@ -424,8 +424,8 @@ modelLoader32.load(
 
 		object.rotation.y += Math.PI / 8;
 		object.position.y += 1;
-		object.position.z -= 0.3;
-		object.position.x += 0.2;
+		object.position.z -= 0.5;
+		object.position.x += 0.5;
 		object.scale.set(0.0015, 0.0015, 0.0015); 
         markerRoot3.add(object);
 
