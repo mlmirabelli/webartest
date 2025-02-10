@@ -380,7 +380,7 @@ modelLoader32.load(
 			//object.rotation.y += 0.02
 			if(object.position.x < finalPosition.x)
 			{
-				object.position.lerp(finalPosition, 0.001);
+				object.position.lerp(finalPosition, 0.0075);
 				//object.scale.set(object.scale.x += scaleFactor, object.scale.y += scaleFactor, object.scale.z += scaleFactor);
 			}
 			else
