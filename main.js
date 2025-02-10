@@ -310,10 +310,10 @@ modelLoader30.load(
         markerRoot3.add(object);
 
 		const ogPosition = new THREE.Vector3(ogPositionX + 0.2, ogPositionY + 1, ogPositionZ - 0.2);
-		const finalPosition = new THREE.Vector3(ogPositionX + 0.6, ogPositionY + 1, ogPositionZ - 0.6);
+		const finalPosition = new THREE.Vector3(ogPositionX + 0.5, ogPositionY + 1, ogPositionZ - 0.5);
 		const totalDistance = ogPosition.distanceTo(finalPosition);
 		const ogScale = 0.0015;
-		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
+		const finalScale = new THREE.Vector3(0.0027, 0.0027, 0.0027);
 		const steps = 100;
 		const distancePerStep = totalDistance/steps;
 
@@ -368,16 +368,16 @@ modelLoader31.load(
 		const ogPositionZ = object.position.z;
 
 		object.rotation.y += Math.PI / 8;
-		object.position.z -= 0.35;
-		object.position.x += 0.35;
-		object.scale.set(0.002, 0.002, 0.002); 
+		object.position.z -= 0.3;
+		object.position.x += 0.3;
+		object.scale.set(0.0019, 0.0019, 0.0019); 
         markerRoot3.add(object);
 
 		const ogPosition = new THREE.Vector3(ogPositionX + 0.2, ogPositionY + 1, ogPositionZ - 0.2);
-		const finalPosition = new THREE.Vector3(ogPositionX + 0.6, ogPositionY + 1, ogPositionZ - 0.6);
+		const finalPosition = new THREE.Vector3(ogPositionX + 0.5, ogPositionY + 1, ogPositionZ - 0.5);
 		const totalDistance = ogPosition.distanceTo(finalPosition);
 		const ogScale = 0.0015;
-		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
+		const finalScale = new THREE.Vector3(0.0027, 0.0027, 0.0027);
 		const steps = 100;
 		const distancePerStep = totalDistance/steps;
 
@@ -424,16 +424,16 @@ modelLoader32.load(
 
 		object.rotation.y += Math.PI / 8;
 		object.position.y += 1;
-		object.position.z -= 0.5;
-		object.position.x += 0.5;
-		object.scale.set(0.00245, 0.00245, 0.00245); 
+		object.position.z -= 0.4;
+		object.position.x += 0.4;
+		object.scale.set(0.0023, 0.0023, 0.0023); 
         markerRoot3.add(object);
 
 		const ogPosition = new THREE.Vector3(ogPositionX + 0.2, ogPositionY + 1, ogPositionZ - 0.2);
-		const finalPosition = new THREE.Vector3(ogPositionX + 0.6, ogPositionY + 1, ogPositionZ - 0.6);
+		const finalPosition = new THREE.Vector3(ogPositionX + 0.4, ogPositionY + 1, ogPositionZ - 0.4);
 		const totalDistance = ogPosition.distanceTo(finalPosition);
 		const ogScale = 0.0015;
-		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
+		const finalScale = new THREE.Vector3(0.00725, 0.0027, 0.0027);
 		const steps = 100;
 		const distancePerStep = totalDistance/steps;
 
