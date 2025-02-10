@@ -314,7 +314,7 @@ modelLoader30.load(
 		const totalDistance = ogPosition.distanceTo(finalPosition);
 		const ogScale = 0.0015;
 		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
-		const steps = 10;
+		const steps = 100;
 		const distancePerStep = totalDistance/steps;
 
 		onRenderFcts.push(function (delta) {
@@ -378,7 +378,7 @@ modelLoader31.load(
 		const totalDistance = ogPosition.distanceTo(finalPosition);
 		const ogScale = 0.0015;
 		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
-		const steps = 10;
+		const steps = 100;
 		const distancePerStep = totalDistance/steps;
 
 		onRenderFcts.push(function (delta) {
@@ -434,7 +434,7 @@ modelLoader32.load(
 		const totalDistance = ogPosition.distanceTo(finalPosition);
 		const ogScale = 0.0015;
 		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
-		const steps = 10;
+		const steps = 100;
 		const distancePerStep = totalDistance/steps;
 
 		onRenderFcts.push(function (delta) {
