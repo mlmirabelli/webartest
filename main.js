@@ -374,7 +374,7 @@ modelLoader32.load(
 		const ogPosition = new THREE.Vector3(object.position.x, object.position.y, object.position.z);
 		const finalPosition = new THREE.Vector3(object.position.x + 0.3, object.position.y, object.position.z - 0.2);
 		const ogScale = 0.0015;
-		const finalScale = 0.0025;
+		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
 
 		onRenderFcts.push(function (delta) {
 			//object.rotation.y += 0.02
