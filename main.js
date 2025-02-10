@@ -317,6 +317,8 @@ modelLoader30.load(
 			object.rotation.y += 0.01*rotationFactor
 			console.log("rotation factor = " + rotationFactor);
 			console.log("object.rotation.y = " + object.rotation.y);
+			console.log("maxRotation = " + maxRotation);
+			console.log("minRotation = " + minRotation);
 		})
     },
     (xhr) => {
