@@ -433,7 +433,7 @@ modelLoader32.load(
 		const finalPosition = new THREE.Vector3(ogPositionX + 0.4, ogPositionY + 1, ogPositionZ - 0.4);
 		const totalDistance = ogPosition.distanceTo(finalPosition);
 		const ogScale = 0.0015;
-		const finalScale = new THREE.Vector3(0.00725, 0.0027, 0.0027);
+		const finalScale = new THREE.Vector3(0.0027, 0.0027, 0.0027);
 		const steps = 100;
 		const distancePerStep = totalDistance/steps;
 
