@@ -381,12 +381,12 @@ modelLoader32.load(
 			if(object.position.x <= finalPosition.x)
 			{
 				object.position.lerp(finalPosition, 0.1);
-				object.scale.set(object.scale.x += scaleFactor, object.scale.y += scaleFactor, object.scale.z += scaleFactor);
+				//object.scale.set(object.scale.x += scaleFactor, object.scale.y += scaleFactor, object.scale.z += scaleFactor);
 			}
 			else
 			{
 				object.position.set(ogPosition.x, ogPosition.y, ogPosition.z);
-				object.scale.set(ogScale, ogScale, ogScale);
+				//object.scale.set(ogScale, ogScale, ogScale);
 			}
 		})
     },
