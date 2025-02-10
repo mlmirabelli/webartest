@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import { FBXLoader } from 'fbxloader';
 import { OBJLoader } from 'objloader';
 import { ArToolkitSource, ArToolkitContext, ArMarkerControls }  from 'threex';
-import { distance } from 'three/tsl';
 
 ArToolkitContext.baseURL = '../'
 
