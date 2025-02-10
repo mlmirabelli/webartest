@@ -304,22 +304,36 @@ modelLoader30.load(
 		object.scale.set(0.0025, 0.0025, 0.0025); 
         markerRoot3.add(object);
 
-		const maxRotation = object.rotation.y + Math.PI / 4;
+		const ogPosition = new THREE.Vector3(object.position.x, object.position.y, object.position.z);
+		const finalPosition = new THREE.Vector3(object.position.x + 0.4, object.position.y, object.position.z - 0.3);
+		const ogScale = 0.0015;
+		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
+
+		onRenderFcts.push(function (delta) {
+			//console.log("object current scale = " + object.scale.x);
+			if(object.position.x + 0.01 < finalPosition.x)
+			{
+				object.position.lerp(finalPosition, 0.0075);
+				object.scale.lerp(finalScale, 0.0075);
+			}
+			else
+			{
+				object.position.set(ogPosition.x, ogPosition.y, ogPosition.z);
+				object.scale.set(ogScale, ogScale, ogScale);
+			}
+		})
+
+		/*const maxRotation = object.rotation.y + Math.PI / 4;
 		const minRotation = object.rotation.y - Math.PI / 4;
 		var rotationFactor = 1;
 
 		onRenderFcts.push(function (delta) {
-			//object.rotation.y += 0.01
 			if(object.rotation.y >= maxRotation || object.rotation.y <= minRotation){
 				rotationFactor *= -1;
 			}
 
 			object.rotation.y += 0.01*rotationFactor
-			/*console.log("rotation factor = " + rotationFactor);
-			console.log("object.rotation.y = " + object.rotation.y);
-			console.log("maxRotation = " + maxRotation);
-			console.log("minRotation = " + minRotation);*/
-		})
+		})*/
     },
     (xhr) => {
         console.log('z0 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
@@ -344,9 +358,28 @@ modelLoader31.load(
 		object.scale.set(0.002, 0.002, 0.002); 
         markerRoot3.add(object);
 
+		const ogPosition = new THREE.Vector3(object.position.x, object.position.y, object.position.z);
+		const finalPosition = new THREE.Vector3(object.position.x + 0.4, object.position.y, object.position.z - 0.3);
+		const ogScale = 0.0015;
+		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
+
 		onRenderFcts.push(function (delta) {
-			object.rotation.y -= 0.015
+			//console.log("object current scale = " + object.scale.x);
+			if(object.position.x + 0.01 < finalPosition.x)
+			{
+				object.position.lerp(finalPosition, 0.0075);
+				object.scale.lerp(finalScale, 0.0075);
+			}
+			else
+			{
+				object.position.set(ogPosition.x, ogPosition.y, ogPosition.z);
+				object.scale.set(ogScale, ogScale, ogScale);
+			}
 		})
+
+		/*onRenderFcts.push(function (delta) {
+			object.rotation.y -= 0.015
+		})*/
     },
     (xhr) => {
         console.log('z1 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
@@ -372,16 +405,12 @@ modelLoader32.load(
         markerRoot3.add(object);
 
 		const ogPosition = new THREE.Vector3(object.position.x, object.position.y, object.position.z);
-		const finalPosition = new THREE.Vector3(object.position.x + 0.3, object.position.y, object.position.z - 0.2);
+		const finalPosition = new THREE.Vector3(object.position.x + 0.4, object.position.y, object.position.z - 0.3);
 		const ogScale = 0.0015;
 		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
 
 		onRenderFcts.push(function (delta) {
-			//object.rotation.y += 0.02
-			//console.log("current object.position.x = " + object.position.x);
-			//console.log("finalPosition.x = " + finalPosition.x);
-
-			console.log("object current scale = " + object.scale.x);
+			//console.log("object current scale = " + object.scale.x);
 			if(object.position.x + 0.01 < finalPosition.x)
 			{
 				object.position.lerp(finalPosition, 0.0075);
