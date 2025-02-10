@@ -315,10 +315,10 @@ modelLoader30.load(
 			}
 
 			object.rotation.y += 0.01*rotationFactor
-			console.log("rotation factor = " + rotationFactor);
+			/*console.log("rotation factor = " + rotationFactor);
 			console.log("object.rotation.y = " + object.rotation.y);
 			console.log("maxRotation = " + maxRotation);
-			console.log("minRotation = " + minRotation);
+			console.log("minRotation = " + minRotation);*/
 		})
     },
     (xhr) => {
@@ -371,8 +371,22 @@ modelLoader32.load(
 		object.scale.set(0.0015, 0.0015, 0.0015); 
         markerRoot3.add(object);
 
+		const ogPosition = new THREE.Vector3(object.position.x, object.position.y, object.position.z);
+		const finalPosition = new THREE.Vector3(object.position.x + 0.3, object.position.y, object.position.z - 0.2);
+		const ogScale = 0.0015;
+
 		onRenderFcts.push(function (delta) {
-			object.rotation.y += 0.02
+			//object.rotation.y += 0.02
+			if(object.position.x <= finalPosition.x)
+			{
+				object.position.lerp(finalPosition, 0.1);
+				object.scale.set(object.scale.x += 0.1, object.scale.y += 0.1, object.scale.z += 0.1,)
+			}
+			else
+			{
+				object.position.set(ogPosition.x, ogPosition.y, ogPosition.z);
+				object.scale.set(ogScale, ogScale, ogScale);
+			}
 		})
     },
     (xhr) => {
