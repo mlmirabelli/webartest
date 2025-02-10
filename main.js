@@ -297,15 +297,20 @@ modelLoader30.load(
 				child.material.needsupdate = true;
 				}
 			});
-		//object.rotation.y += Math.PI / 4;
+
+		const ogPositionX = object.position.x;
+		const ogPositionY = object.position.y;
+		const ogPositionZ = object.position.z;
+
+		object.rotation.y += Math.PI / 8;
 		object.position.y += 1;
 		object.position.z -= 0.5;
 		object.position.x += 0.5;
 		object.scale.set(0.0025, 0.0025, 0.0025); 
         markerRoot3.add(object);
 
-		const ogPosition = new THREE.Vector3(object.position.x, object.position.y, object.position.z);
-		const finalPosition = new THREE.Vector3(object.position.x + 0.3, object.position.y, object.position.z - 0.2);
+		const ogPosition = new THREE.Vector3(ogPositionX + 0.5, ogPositionY, ogPositionZ - 0.5);
+		const finalPosition = new THREE.Vector3(ogPositionX + 0.8, ogPositionY, ogPositionZ - 0.7);
 		const ogScale = 0.0015;
 		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
 
@@ -352,14 +357,19 @@ modelLoader31.load(
 				child.material.needsupdate = true;
 				}
 			});
-		object.position.y += 0.85;
+
+		const ogPositionX = object.position.x;
+		const ogPositionY = object.position.y;
+		const ogPositionZ = object.position.z;
+
+		object.rotation.y += Math.PI / 8;
 		object.position.z -= 0.4;
 		object.position.x += 0.35;
 		object.scale.set(0.002, 0.002, 0.002); 
         markerRoot3.add(object);
 
-		const ogPosition = new THREE.Vector3(object.position.x, object.position.y, object.position.z);
-		const finalPosition = new THREE.Vector3(object.position.x + 0.3, object.position.y, object.position.z - 0.2);
+		const ogPosition = new THREE.Vector3(ogPositionX + 0.5, ogPositionY, ogPositionZ - 0.5);
+		const finalPosition = new THREE.Vector3(ogPositionX + 0.8, ogPositionY, ogPositionZ - 0.7);
 		const ogScale = 0.0015;
 		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
 
@@ -397,6 +407,11 @@ modelLoader32.load(
 				child.material.needsupdate = true;
 				}
 			});
+
+		const ogPositionX = object.position.x;
+		const ogPositionY = object.position.y;
+		const ogPositionZ = object.position.z;
+
 		object.rotation.y += Math.PI / 8;
 		object.position.y += 1;
 		object.position.z -= 0.3;
@@ -404,8 +419,8 @@ modelLoader32.load(
 		object.scale.set(0.0015, 0.0015, 0.0015); 
         markerRoot3.add(object);
 
-		const ogPosition = new THREE.Vector3(object.position.x, object.position.y, object.position.z);
-		const finalPosition = new THREE.Vector3(object.position.x + 0.3, object.position.y, object.position.z - 0.2);
+		const ogPosition = new THREE.Vector3(ogPositionX + 0.5, ogPositionY, ogPositionZ - 0.5);
+		const finalPosition = new THREE.Vector3(ogPositionX + 0.8, ogPositionY, ogPositionZ - 0.7);
 		const ogScale = 0.0015;
 		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
 
