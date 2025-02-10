@@ -380,8 +380,8 @@ modelLoader32.load(
 			//object.rotation.y += 0.02
 			console.log("current object.position.x = " + object.position.x);
 			console.log("finalPosition.x = " + finalPosition.x);
-			
-			if(object.position.x < finalPosition.x)
+
+			if(object.position.x + 0.1 < finalPosition.x)
 			{
 				object.position.lerp(finalPosition, 0.0075);
 				//object.scale.set(object.scale.x += scaleFactor, object.scale.y += scaleFactor, object.scale.z += scaleFactor);
