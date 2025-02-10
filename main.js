@@ -306,7 +306,7 @@ modelLoader30.load(
 		object.position.y += 1;
 		object.position.z -= 0.2;
 		object.position.x += 0.2;
-		object.scale.set(0.0025, 0.0025, 0.0025); 
+		object.scale.set(0.0015, 0.0015, 0.0015); 
         markerRoot3.add(object);
 
 		const ogPosition = new THREE.Vector3(ogPositionX + 0.2, ogPositionY + 1, ogPositionZ - 0.2);
@@ -426,7 +426,7 @@ modelLoader32.load(
 		object.position.y += 1;
 		object.position.z -= 0.5;
 		object.position.x += 0.5;
-		object.scale.set(0.0015, 0.0015, 0.0015); 
+		object.scale.set(0.00245, 0.00245, 0.00245); 
         markerRoot3.add(object);
 
 		const ogPosition = new THREE.Vector3(ogPositionX + 0.2, ogPositionY + 1, ogPositionZ - 0.2);
