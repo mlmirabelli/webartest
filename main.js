@@ -374,13 +374,14 @@ modelLoader32.load(
 		const ogPosition = new THREE.Vector3(object.position.x, object.position.y, object.position.z);
 		const finalPosition = new THREE.Vector3(object.position.x + 0.3, object.position.y, object.position.z - 0.2);
 		const ogScale = 0.0015;
+		const scaleFactor = 0.0001;
 
 		onRenderFcts.push(function (delta) {
 			//object.rotation.y += 0.02
 			if(object.position.x <= finalPosition.x)
 			{
 				object.position.lerp(finalPosition, 0.1);
-				object.scale.set(object.scale.x += 0.1, object.scale.y += 0.1, object.scale.z += 0.1,)
+				object.scale.set(object.scale.x += scaleFactor, object.scale.y += scaleFactor, object.scale.z += scaleFactor);
 			}
 			else
 			{
