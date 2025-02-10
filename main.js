@@ -311,15 +311,19 @@ modelLoader30.load(
 
 		const ogPosition = new THREE.Vector3(ogPositionX + 0.2, ogPositionY + 1, ogPositionZ - 0.2);
 		const finalPosition = new THREE.Vector3(ogPositionX + 0.6, ogPositionY + 1, ogPositionZ - 0.6);
+		const distance = ogPosition.distanceTo(finalPosition);
 		const ogScale = 0.0015;
 		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
+		var rateOfChange = distance/0.01;
 
 		onRenderFcts.push(function (delta) {
 			//console.log("object current scale = " + object.scale.x);
 			if(object.position.x + 0.001 < finalPosition.x)
 			{
-				object.position.lerp(finalPosition, 0.01 * delta);
-				object.scale.lerp(finalScale, 0.01 * delta);
+				const currentDistance = object.position.distanceTo(finalPosition);
+				const newRate = currentDistance/rateOfChange;
+				object.position.lerp(finalPosition, newRate);
+				object.scale.lerp(finalScale, newRate);
 			}
 			else
 			{
@@ -370,15 +374,19 @@ modelLoader31.load(
 
 		const ogPosition = new THREE.Vector3(ogPositionX + 0.2, ogPositionY + 1, ogPositionZ - 0.2);
 		const finalPosition = new THREE.Vector3(ogPositionX + 0.6, ogPositionY + 1, ogPositionZ - 0.6);
+		const distance = ogPosition.distanceTo(finalPosition);
 		const ogScale = 0.0015;
 		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
+		var rateOfChange = distance/0.01;
 
 		onRenderFcts.push(function (delta) {
 			//console.log("object current scale = " + object.scale.x);
 			if(object.position.x + 0.001 < finalPosition.x)
 			{
-				object.position.lerp(finalPosition, 0.01 * delta);
-				object.scale.lerp(finalScale, 0.01 * delta);
+				const currentDistance = object.position.distanceTo(finalPosition);
+				const newRate = currentDistance/rateOfChange;
+				object.position.lerp(finalPosition, newRate);
+				object.scale.lerp(finalScale, newRate);
 			}
 			else
 			{
@@ -421,15 +429,19 @@ modelLoader32.load(
 
 		const ogPosition = new THREE.Vector3(ogPositionX + 0.2, ogPositionY + 1, ogPositionZ - 0.2);
 		const finalPosition = new THREE.Vector3(ogPositionX + 0.6, ogPositionY + 1, ogPositionZ - 0.6);
+		const distance = ogPosition.distanceTo(finalPosition);
 		const ogScale = 0.0015;
 		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
+		var rateOfChange = distance/0.01;
 
 		onRenderFcts.push(function (delta) {
 			//console.log("object current scale = " + object.scale.x);
 			if(object.position.x + 0.001 < finalPosition.x)
 			{
-				object.position.lerp(finalPosition, 0.01 * delta);
-				object.scale.lerp(finalScale, 0.01 * delta);
+				const currentDistance = object.position.distanceTo(finalPosition);
+				const newRate = currentDistance/rateOfChange;
+				object.position.lerp(finalPosition, newRate);
+				object.scale.lerp(finalScale, newRate);
 			}
 			else
 			{
