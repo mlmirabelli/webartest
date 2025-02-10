@@ -373,8 +373,8 @@ modelLoader32.load(
 
 		const ogPosition = new THREE.Vector3(object.position.x, object.position.y, object.position.z);
 		const finalPosition = new THREE.Vector3(object.position.x + 0.3, object.position.y, object.position.z - 0.2);
-		const ogScale = object.scale.x;
-		const scaleFactor = 0.00005;
+		const ogScale = 0.0015;
+		const finalScale = 0.0025;
 
 		onRenderFcts.push(function (delta) {
 			//object.rotation.y += 0.02
@@ -385,12 +385,12 @@ modelLoader32.load(
 			if(object.position.x + 0.01 < finalPosition.x)
 			{
 				object.position.lerp(finalPosition, 0.0075);
-				object.scale.set(object.scale.x += scaleFactor, object.scale.y += scaleFactor, object.scale.z += scaleFactor);
+				object.scale.lerp(finalScale, 0.0075);
 			}
 			else
 			{
 				object.position.set(ogPosition.x, ogPosition.y, ogPosition.z);
-				//object.scale.set(ogScale, ogScale, ogScale);
+				object.scale.set(ogScale, ogScale, ogScale);
 			}
 		})
     },
