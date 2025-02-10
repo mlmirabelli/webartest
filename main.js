@@ -305,7 +305,7 @@ modelLoader30.load(
         markerRoot3.add(object);
 
 		const ogPosition = new THREE.Vector3(object.position.x, object.position.y, object.position.z);
-		const finalPosition = new THREE.Vector3(object.position.x + 0.4, object.position.y, object.position.z - 0.3);
+		const finalPosition = new THREE.Vector3(object.position.x + 0.3, object.position.y, object.position.z - 0.2);
 		const ogScale = 0.0015;
 		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
 
@@ -359,7 +359,7 @@ modelLoader31.load(
         markerRoot3.add(object);
 
 		const ogPosition = new THREE.Vector3(object.position.x, object.position.y, object.position.z);
-		const finalPosition = new THREE.Vector3(object.position.x + 0.4, object.position.y, object.position.z - 0.3);
+		const finalPosition = new THREE.Vector3(object.position.x + 0.3, object.position.y, object.position.z - 0.2);
 		const ogScale = 0.0015;
 		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
 
@@ -405,7 +405,7 @@ modelLoader32.load(
         markerRoot3.add(object);
 
 		const ogPosition = new THREE.Vector3(object.position.x, object.position.y, object.position.z);
-		const finalPosition = new THREE.Vector3(object.position.x + 0.4, object.position.y, object.position.z - 0.3);
+		const finalPosition = new THREE.Vector3(object.position.x + 0.3, object.position.y, object.position.z - 0.2);
 		const ogScale = 0.0015;
 		const finalScale = new THREE.Vector3(0.0025, 0.0025, 0.0025);
 
