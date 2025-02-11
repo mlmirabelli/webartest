@@ -553,7 +553,7 @@ modelLoader52.load(
 		object.rotation.y += Math.PI / 2;
 		object.position.y += 1;
 		object.position.z += 0.5;
-		object.position.x += 0.3;
+		object.position.x += 0.5;
 		object.scale.set(0.0025, 0.0025, -0.0025); 
         markerRoot5.add(object);
 
