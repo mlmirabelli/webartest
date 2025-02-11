@@ -403,7 +403,7 @@ modelLoader4.load(
 		object.position.y += 1;
 		object.position.z += 0.5;
 		object.rotation.x -= Math.PI / 2;
-		object.scale.set(0.001, 0.001, 0.001); 
+		object.scale.set(0.00075, 0.00075, 0.00075); 
         markerRoot4.add(object);
 
 		/*onRenderFcts.push(function (delta) {
@@ -427,7 +427,7 @@ modelLoader40.load(
 				child.material.needsupdate = true;
 				}
 			});
-		object.position.y += 1;
+		object.position.y += 1.25;
 		object.position.z -= 0.5;
 		//object.rotation.x -= Math.PI / 2;
 		object.scale.set(0.01, 0.01, 0.01); 
