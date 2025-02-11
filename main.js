@@ -451,12 +451,12 @@ modelLoader41.load(
 			});
 		object.position.y += 1.25;
 		object.position.z -= 0.5;
-		object.position.x -= 0.5;
+		object.position.x += 0.5;
 		object.scale.set(0.005, 0.005, 0.005); 
         markerRoot4.add(object);
 
 		onRenderFcts.push(function (delta) {
-			object.rotation.y += Math.PI * delta / 2
+			object.rotation.y -= Math.PI * delta / 2
 		})
     },
     (xhr) => {
