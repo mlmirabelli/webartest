@@ -401,7 +401,7 @@ modelLoader4.load(
 				}
 			});
 		object.position.y += 1;
-		//object.position.z += 0.5;
+		object.position.z += 0.5;
 		object.rotation.x -= Math.PI / 2;
 		object.scale.set(0.001, 0.001, 0.001); 
         markerRoot4.add(object);
@@ -412,6 +412,33 @@ modelLoader4.load(
     },
     (xhr) => {
         console.log('Factory Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
+    },
+    (error) => {
+        console.log(error)
+    }
+)
+
+modelLoader40.load(
+    'https://mlmirabelli.github.io/webartest/media/Scrap.fbx',
+    (object) => {
+		object.traverse(function (child) {
+		if (child instanceof THREE.Mesh) {
+				child.material = normalMaterial;
+				child.material.needsupdate = true;
+				}
+			});
+		object.position.y += 1;
+		object.position.z -= 0.5;
+		//object.rotation.x -= Math.PI / 2;
+		//object.scale.set(0.001, 0.001, 0.001); 
+        markerRoot40.add(object);
+
+		/*onRenderFcts.push(function (delta) {
+			
+		})*/
+    },
+    (xhr) => {
+        console.log('cog0 = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
     },
     (error) => {
         console.log(error)
