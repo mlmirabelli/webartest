@@ -499,9 +499,9 @@ modelLoader50.load(
 		object.scale.set(0.0025, 0.0025, 0.0025); 
         markerRoot5.add(object);
 
-		/*onRenderFcts.push(function (delta) {
+		onRenderFcts.push(function (delta) {
 			object.rotation.y -= Math.PI * delta / 2
-		})*/
+		})
     },
     (xhr) => {
         console.log('maria0 = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
@@ -527,10 +527,6 @@ modelLoader51.load(
 		object.position.x -= 0.3;
 		object.scale.set(0.0025, 0.0025, 0.0025); 
         markerRoot5.add(object);
-
-		/*onRenderFcts.push(function (delta) {
-			object.rotation.y -= Math.PI * delta / 2
-		})*/
     },
     (xhr) => {
         console.log('maria1 = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
@@ -556,10 +552,6 @@ modelLoader52.load(
 		object.position.x += 0.5;
 		object.scale.set(0.0025, 0.0025, -0.0025); 
         markerRoot5.add(object);
-
-		/*onRenderFcts.push(function (delta) {
-			object.rotation.y -= Math.PI * delta / 2
-		})*/
     },
     (xhr) => {
         console.log('maria2 = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
