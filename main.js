@@ -325,7 +325,7 @@ modelLoader30.load(
         markerRoot3.add(object);
 
 		const ogPosition = new THREE.Vector3(ogPositionX + 0.2, ogPositionY + 1, ogPositionZ - 0.2);
-		const finalPosition = new THREE.Vector3(ogPositionX + 0.5, ogPositionY + 1, ogPositionZ - 0.5);
+		const finalPosition = new THREE.Vector3(ogPositionX + 0.6, ogPositionY + 1, ogPositionZ - 0.6);
 		const totalDistance = ogPosition.distanceTo(finalPosition);
 		const ogScale = 0;
 		const finalScale = new THREE.Vector3(0.004, 0.004, 0.004);
@@ -371,13 +371,13 @@ modelLoader31.load(
 
 		object.rotation.y += Math.PI / 8;
 		object.position.y += 1.1;
-		object.position.z -= 0.3;
-		object.position.x += 0.3;
+		object.position.z -= 0.4;
+		object.position.x += 0.4;
 		object.scale.set(0.002, 0.002, 0.002); 
         markerRoot3.add(object);
 
 		const ogPosition = new THREE.Vector3(ogPositionX + 0.2, ogPositionY + 1, ogPositionZ - 0.2);
-		const finalPosition = new THREE.Vector3(ogPositionX + 0.5, ogPositionY + 1, ogPositionZ - 0.5);
+		const finalPosition = new THREE.Vector3(ogPositionX + 0.6, ogPositionY + 1, ogPositionZ - 0.6);
 		const totalDistance = ogPosition.distanceTo(finalPosition);
 		const ogScale = 0;
 		const finalScale = new THREE.Vector3(0.004, 0.004, 0.004);
