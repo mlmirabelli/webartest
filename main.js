@@ -73,6 +73,10 @@ const modelLoader30 = new FBXLoader();
 const modelLoader31 = new FBXLoader();
 var markerRoot3 = new THREE.Group;
 
+const modelLoader4 = new FBXLoader();
+const modelLoader40 = new FBXLoader();
+const modelLoader41 = new FBXLoader();
+var markerRoot4 = new THREE.Group;
 
 function initARContext() { // create atToolkitContext
 	arToolkitContext = new ArToolkitContext({
@@ -123,6 +127,18 @@ function initARContext() { // create atToolkitContext
 		type: 'pattern',
 		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-volcano.patt',
 	})
+
+	//////////////////////////////////////////////////////////////////////////////
+	//		markerRoot4
+	//////////////////////////////////////////////////////////////////////////////
+
+	markerRoot4.name = 'marker4'
+	scene.add(markerRoot4)
+	var markerControls = new ArMarkerControls(arToolkitContext, markerRoot4, {
+		type: 'pattern',
+		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-factory.patt',
+	})
+
 
 	/*// MARKER 
 	arMarkerControls = new ArMarkerControls(arToolkitContext, camera, {
@@ -184,26 +200,10 @@ modelLoader1.load(
     (object) => {
 		object.traverse(function (child) {
 		if (child instanceof THREE.Mesh) {
-			/*textureLoader.load( 'https://mlmirabelli.github.io/webartest/media/Plane_diffuse.png', ( texture ) => {   
-				const planeMaterial = new THREE.MeshStandardMaterial( {
-                    color: 0xffffff,
-                    metalness: 0,
-                    roughness: 0,
-					map: texture,
-					depthTest: true,
-        			depthWrite: true
-                } );*/
-				//child.material.map = texture;
-				//child.material = planeMaterial;
 				child.material = normalMaterial;
 				child.material.needsupdate = true;
-				//console.log(texture)
-				// render(); // only if there is no render loop
 				}
-				//console.log( child.geometry.attributes.uv );
 			});
-			//child.material = new THREE.MeshNormalMaterial();
-			//child.material.needsUpdate = true;
 		object.position.y += 1;
 		object.position.z += 0.5;
 		object.rotation.x -= Math.PI / 2;
@@ -317,7 +317,6 @@ modelLoader30.load(
 		const distancePerStep = totalDistance/steps;
 
 		onRenderFcts.push(function (delta) {
-			//console.log("object current scale = " + object.scale.x);
 			if(object.position.x + 0.0005 < finalPosition.x)
 			{
 				const currentDistance = object.position.distanceTo(finalPosition);
@@ -370,7 +369,6 @@ modelLoader31.load(
 		const distancePerStep = totalDistance/steps;
 
 		onRenderFcts.push(function (delta) {
-			//console.log("object current scale = " + object.scale.x);
 			if(object.position.x + 0.0005 < finalPosition.x)
 			{
 				const currentDistance = object.position.distanceTo(finalPosition);
@@ -384,13 +382,36 @@ modelLoader31.load(
 				object.scale.set(ogScale, ogScale, ogScale);
 			}
 		})
-
-		/*onRenderFcts.push(function (delta) {
-			object.rotation.y -= 0.015
-		})*/
     },
     (xhr) => {
         console.log('z1 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
+    },
+    (error) => {
+        console.log(error)
+    }
+)
+
+modelLoader4.load(
+    'https://mlmirabelli.github.io/webartest/media/Factory.fbx',
+    (object) => {
+		object.traverse(function (child) {
+		if (child instanceof THREE.Mesh) {
+				child.material = normalMaterial;
+				child.material.needsupdate = true;
+				}
+			});
+		object.position.y += 1;
+		//object.position.z += 0.5;
+		//object.rotation.x -= Math.PI / 2;
+		object.scale.set(0.5, 0.5, 0.5); 
+        markerRoot4.add(object);
+
+		/*onRenderFcts.push(function (delta) {
+			
+		})*/
+    },
+    (xhr) => {
+        console.log('Factory Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
     },
     (error) => {
         console.log(error)
