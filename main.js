@@ -318,7 +318,7 @@ modelLoader30.load(
 		const ogPositionZ = object.position.z;
 
 		object.rotation.y += Math.PI / 8;
-		object.position.y += 1;
+		object.position.y += 0.9;
 		object.position.z -= 0.2;
 		object.position.x += 0.2;
 		object.scale.set(0, 0, 0); 
@@ -370,7 +370,7 @@ modelLoader31.load(
 		const ogPositionZ = object.position.z;
 
 		object.rotation.y += Math.PI / 8;
-		object.position.y += 1;
+		object.position.y += 1.1;
 		object.position.z -= 0.3;
 		object.position.x += 0.3;
 		object.scale.set(0.0002, 0.0002, 0.0002); 
