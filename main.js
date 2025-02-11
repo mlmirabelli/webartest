@@ -78,6 +78,11 @@ const modelLoader40 = new FBXLoader();
 const modelLoader41 = new FBXLoader();
 var markerRoot4 = new THREE.Group;
 
+const modelLoader50 = new FBXLoader();
+const modelLoader51 = new FBXLoader();
+const modelLoader52 = new FBXLoader();
+var markerRoot5 = new THREE.Group;
+
 function initARContext() { // create atToolkitContext
 	arToolkitContext = new ArToolkitContext({
 		cameraParametersUrl: 'https://mlmirabelli.github.io/webartest/media/camera_para.dat',
@@ -137,6 +142,17 @@ function initARContext() { // create atToolkitContext
 	var markerControls = new ArMarkerControls(arToolkitContext, markerRoot4, {
 		type: 'pattern',
 		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-factory.patt',
+	})
+
+	//////////////////////////////////////////////////////////////////////////////
+	//		markerRoot5
+	//////////////////////////////////////////////////////////////////////////////
+
+	markerRoot5.name = 'marker5'
+	scene.add(markerRoot5)
+	var markerControls = new ArMarkerControls(arToolkitContext, markerRoot5, {
+		type: 'pattern',
+		patternUrl: 'https://mlmirabelli.github.io/webartest/media/pattern-marias.patt',
 	})
 
 
