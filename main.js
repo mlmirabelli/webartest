@@ -495,8 +495,8 @@ modelLoader50.load(
 		object.rotation.x -= Math.PI / 2;
 		object.rotation.y -= Math.PI / 4;
 		object.position.y += 1;
-		//object.position.z -= 0.5;
-		object.scale.set(0.005, 0.005, 0.005); 
+		object.position.z += 0.5;
+		object.scale.set(0.0025, 0.0025, 0.0025); 
         markerRoot5.add(object);
 
 		/*onRenderFcts.push(function (delta) {
@@ -505,6 +505,35 @@ modelLoader50.load(
     },
     (xhr) => {
         console.log('maria0 = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
+    },
+    (error) => {
+        console.log(error)
+    }
+)
+
+modelLoader51.load(
+    'https://mlmirabelli.github.io/webartest/media/maria1.fbx',
+    (object) => {
+		object.traverse(function (child) {
+		if (child instanceof THREE.Mesh) {
+				child.material = normalMaterial;
+				child.material.needsupdate = true;
+				}
+			});
+		object.rotation.x -= Math.PI / 2;
+		object.rotation.y += Math.PI / 3;
+		object.position.y += 1;
+		object.position.z += 0.5;
+		object.position.x -= 0.5;
+		object.scale.set(0.0025, 0.0025, 0.0025); 
+        markerRoot5.add(object);
+
+		/*onRenderFcts.push(function (delta) {
+			object.rotation.y -= Math.PI * delta / 2
+		})*/
+    },
+    (xhr) => {
+        console.log('maria1 = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
     },
     (error) => {
         console.log(error)
