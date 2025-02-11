@@ -484,7 +484,7 @@ modelLoader41.load(
 )
 
 modelLoader50.load(
-    'https://mlmirabelli.github.io/webartest/media/Female Dance Pose (1).fbx',
+    'https://mlmirabelli.github.io/webartest/media/maria0.fbx',
     (object) => {
 		object.traverse(function (child) {
 		if (child instanceof THREE.Mesh) {
@@ -495,7 +495,7 @@ modelLoader50.load(
 		object.position.y += 1.25;
 		//object.position.z -= 0.5;
 		object.scale.set(0.05, 0.05, 0.05); 
-        markerRoot4.add(object);
+        markerRoot5.add(object);
 
 		/*onRenderFcts.push(function (delta) {
 			object.rotation.y -= Math.PI * delta / 2
