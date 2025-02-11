@@ -319,7 +319,7 @@ modelLoader30.load(
 
 		onRenderFcts.push(function (delta) {
 			//console.log("object current scale = " + object.scale.x);
-			if(object.position.x + 0.001 < finalPosition.x)
+			if(object.position.x + 0.0005 < finalPosition.x)
 			{
 				const currentDistance = object.position.distanceTo(finalPosition);
 				var rateOfChange = distancePerStep/currentDistance;
@@ -384,7 +384,7 @@ modelLoader31.load(
 
 		onRenderFcts.push(function (delta) {
 			//console.log("object current scale = " + object.scale.x);
-			if(object.position.x + 0.001 < finalPosition.x)
+			if(object.position.x + 0.0005 < finalPosition.x)
 			{
 				const currentDistance = object.position.distanceTo(finalPosition);
 				var rateOfChange = distancePerStep/currentDistance;
@@ -440,7 +440,7 @@ modelLoader32.load(
 
 		onRenderFcts.push(function (delta) {
 			//console.log("object current scale = " + object.scale.x);
-			if(object.position.x + 0.001 < finalPosition.x)
+			if(object.position.x + 0.0005 < finalPosition.x)
 			{
 				const currentDistance = object.position.distanceTo(finalPosition);
 				var rateOfChange = distancePerStep/currentDistance;
