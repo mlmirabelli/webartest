@@ -392,7 +392,7 @@ modelLoader31.load(
 )
 
 modelLoader4.load(
-    'https://mlmirabelli.github.io/webartest/media/Factory.fbx',
+    'https://mlmirabelli.github.io/webartest/media/carousel.fbx',
     (object) => {
 		object.traverse(function (child) {
 		if (child instanceof THREE.Mesh) {
@@ -404,7 +404,7 @@ modelLoader4.load(
 		//object.position.z += 0.5;
 		//object.rotation.x -= Math.PI / 2;
 		//object.scale.set(0.5, 0.5, 0.5); 
-        markerRoot3.add(object);
+        markerRoot4.add(object);
 
 		/*onRenderFcts.push(function (delta) {
 			
