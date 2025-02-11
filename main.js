@@ -495,7 +495,7 @@ modelLoader50.load(
 		object.rotation.x -= Math.PI / 2;
 		object.rotation.y -= Math.PI / 4;
 		object.position.y += 1;
-		object.position.z += 0.45;
+		object.position.z += 0.5;
 		object.scale.set(0.0025, 0.0025, 0.0025); 
         markerRoot5.add(object);
 
@@ -554,7 +554,7 @@ modelLoader52.load(
 		object.position.y += 1;
 		object.position.z += 0.5;
 		object.position.x += 0.3;
-		object.scale.set(0.0025, 0.0025, 0.0025); 
+		object.scale.set(0.0025, -0.0025, 0.0025); 
         markerRoot5.add(object);
 
 		/*onRenderFcts.push(function (delta) {
