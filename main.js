@@ -71,7 +71,6 @@ var markerRoot2 = new THREE.Group;
 const modelLoader3 = new OBJLoader();
 const modelLoader30 = new FBXLoader();
 const modelLoader31 = new FBXLoader();
-const modelLoader32 = new FBXLoader();
 var markerRoot3 = new THREE.Group;
 
 
@@ -332,18 +331,6 @@ modelLoader30.load(
 				object.scale.set(ogScale, ogScale, ogScale);
 			}
 		})
-
-		/*const maxRotation = object.rotation.y + Math.PI / 4;
-		const minRotation = object.rotation.y - Math.PI / 4;
-		var rotationFactor = 1;
-
-		onRenderFcts.push(function (delta) {
-			if(object.rotation.y >= maxRotation || object.rotation.y <= minRotation){
-				rotationFactor *= -1;
-			}
-
-			object.rotation.y += 0.01*rotationFactor
-		})*/
     },
     (xhr) => {
         console.log('z0 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
@@ -404,58 +391,6 @@ modelLoader31.load(
     },
     (xhr) => {
         console.log('z1 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
-    },
-    (error) => {
-        console.log(error)
-    }
-)
-modelLoader32.load(
-    'https://mlmirabelli.github.io/webartest/media/z.fbx',
-    (object) => {
-		object.traverse(function (child) {
-		if (child instanceof THREE.Mesh) {
-				child.material = normalMaterial;
-				child.material.needsupdate = true;
-				}
-			});
-
-		const ogPositionX = object.position.x;
-		const ogPositionY = object.position.y;
-		const ogPositionZ = object.position.z;
-
-		object.rotation.y += Math.PI / 8;
-		object.position.y += 1;
-		object.position.z -= 0.4;
-		object.position.x += 0.4;
-		object.scale.set(0.00132, 0.00132, 0.00132); 
-        //markerRoot3.add(object);
-
-		const ogPosition = new THREE.Vector3(ogPositionX + 0.2, ogPositionY + 1, ogPositionZ - 0.2);
-		const finalPosition = new THREE.Vector3(ogPositionX + 0.4, ogPositionY + 1, ogPositionZ - 0.4);
-		const totalDistance = ogPosition.distanceTo(finalPosition);
-		const ogScale = 0;
-		const finalScale = new THREE.Vector3(0.002, 0.002, 0.002);
-		const steps = 100;
-		const distancePerStep = totalDistance/steps;
-
-		onRenderFcts.push(function (delta) {
-			//console.log("object current scale = " + object.scale.x);
-			if(object.position.x + 0.0005 < finalPosition.x)
-			{
-				const currentDistance = object.position.distanceTo(finalPosition);
-				var rateOfChange = distancePerStep/currentDistance;
-				object.position.lerp(finalPosition, rateOfChange);
-				object.scale.lerp(finalScale, rateOfChange);
-			}
-			else
-			{
-				object.position.set(ogPosition.x, ogPosition.y, ogPosition.z);
-				object.scale.set(ogScale, ogScale, ogScale);
-			}
-		})
-    },
-    (xhr) => {
-        console.log('z2 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
     },
     (error) => {
         console.log(error)
