@@ -317,7 +317,7 @@ modelLoader30.load(
 		const steps = 100;
 		const distancePerStep = totalDistance/steps;
 
-		onRenderFcts.push(function (delta) {
+		/*onRenderFcts.push(function (delta) {
 			//console.log("object current scale = " + object.scale.x);
 			if(object.position.x + 0.001 < finalPosition.x)
 			{
@@ -331,7 +331,7 @@ modelLoader30.load(
 				object.position.set(ogPosition.x, ogPosition.y, ogPosition.z);
 				object.scale.set(ogScale, ogScale, ogScale);
 			}
-		})
+		})*/
 
 		/*const maxRotation = object.rotation.y + Math.PI / 4;
 		const minRotation = object.rotation.y - Math.PI / 4;
@@ -381,7 +381,7 @@ modelLoader31.load(
 		const steps = 100;
 		const distancePerStep = totalDistance/steps;
 
-		onRenderFcts.push(function (delta) {
+		/*onRenderFcts.push(function (delta) {
 			//console.log("object current scale = " + object.scale.x);
 			if(object.position.x + 0.001 < finalPosition.x)
 			{
@@ -395,7 +395,7 @@ modelLoader31.load(
 				object.position.set(ogPosition.x, ogPosition.y, ogPosition.z);
 				object.scale.set(ogScale, ogScale, ogScale);
 			}
-		})
+		})*/
 
 		/*onRenderFcts.push(function (delta) {
 			object.rotation.y -= 0.015
@@ -437,7 +437,7 @@ modelLoader32.load(
 		const steps = 100;
 		const distancePerStep = totalDistance/steps;
 
-		onRenderFcts.push(function (delta) {
+		/*onRenderFcts.push(function (delta) {
 			//console.log("object current scale = " + object.scale.x);
 			if(object.position.x + 0.001 < finalPosition.x)
 			{
@@ -451,7 +451,7 @@ modelLoader32.load(
 				object.position.set(ogPosition.x, ogPosition.y, ogPosition.z);
 				object.scale.set(ogScale, ogScale, ogScale);
 			}
-		})
+		})*/
     },
     (xhr) => {
         console.log('z2 Obj = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
