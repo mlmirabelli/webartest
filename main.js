@@ -425,7 +425,7 @@ modelLoader40.load(
 			});
 		object.position.y += 1.25;
 		object.position.z -= 0.5;
-		object.scale.set(0.01, 0.01, 0.01); 
+		object.scale.set(0.0075, 0.0075, 0.0075); 
         markerRoot4.add(object);
 
 		onRenderFcts.push(function (delta) {
