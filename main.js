@@ -430,7 +430,7 @@ modelLoader40.load(
 		object.position.y += 1;
 		object.position.z -= 0.5;
 		//object.rotation.x -= Math.PI / 2;
-		//object.scale.set(0.001, 0.001, 0.001); 
+		object.scale.set(0.01, 0.01, 0.01); 
         markerRoot4.add(object);
 
 		/*onRenderFcts.push(function (delta) {
