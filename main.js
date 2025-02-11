@@ -492,9 +492,10 @@ modelLoader50.load(
 				child.material.needsupdate = true;
 				}
 			});
-		object.position.y += 1.25;
+		object.rotation.x -= Math.PI / 2;
+		object.position.y += 1;
 		//object.position.z -= 0.5;
-		object.scale.set(0.05, 0.05, 0.05); 
+		object.scale.set(0.01, 0.01, 0.01); 
         markerRoot5.add(object);
 
 		/*onRenderFcts.push(function (delta) {
