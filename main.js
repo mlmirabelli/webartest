@@ -483,6 +483,32 @@ modelLoader41.load(
     }
 )
 
+modelLoader50.load(
+    'https://mlmirabelli.github.io/webartest/media/Female Dance Pose (1).fbx',
+    (object) => {
+		object.traverse(function (child) {
+		if (child instanceof THREE.Mesh) {
+				child.material = normalMaterial;
+				child.material.needsupdate = true;
+				}
+			});
+		object.position.y += 1.25;
+		//object.position.z -= 0.5;
+		object.scale.set(0.05, 0.05, 0.05); 
+        markerRoot4.add(object);
+
+		/*onRenderFcts.push(function (delta) {
+			object.rotation.y -= Math.PI * delta / 2
+		})*/
+    },
+    (xhr) => {
+        console.log('maria0 = ' + (xhr.loaded / xhr.total) * 100 + '% loaded')
+    },
+    (error) => {
+        console.log(error)
+    }
+)
+
 //////////////////////////////////////////////////////////////////////////////////
 //		render the whole thing on the page                                      //
 //////////////////////////////////////////////////////////////////////////////////
