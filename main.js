@@ -451,7 +451,7 @@ modelLoader41.load(
 			});
 		object.position.y += 1.25;
 		object.position.z -= 0.5;
-		object.position.x += 0.25;
+		object.position.x += 0.35;
 		object.scale.set(0.005, 0.005, 0.005); 
         markerRoot4.add(object);
 
