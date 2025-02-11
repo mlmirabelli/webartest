@@ -400,9 +400,9 @@ modelLoader4.load(
 				child.material.needsupdate = true;
 				}
 			});
-		//object.position.y += 1;
+		object.position.y += 1;
 		//object.position.z += 0.5;
-		//object.rotation.x -= Math.PI / 2;
+		object.rotation.x -= Math.PI / 2;
 		object.scale.set(0.001, 0.001, 0.001); 
         markerRoot4.add(object);
 
