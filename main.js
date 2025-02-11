@@ -428,7 +428,7 @@ modelLoader32.load(
 		object.position.z -= 0.4;
 		object.position.x += 0.4;
 		object.scale.set(0.00132, 0.00132, 0.00132); 
-        markerRoot3.add(object);
+        //markerRoot3.add(object);
 
 		const ogPosition = new THREE.Vector3(ogPositionX + 0.2, ogPositionY + 1, ogPositionZ - 0.2);
 		const finalPosition = new THREE.Vector3(ogPositionX + 0.4, ogPositionY + 1, ogPositionZ - 0.4);
